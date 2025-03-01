@@ -30,7 +30,8 @@ const windowLoaded = () => {
           $('.projects').css('display', 'none');
           $('footer').css('display', 'none');
           $('.intro').css('display', 'none');
-          $('.contact').css('display', 'none');
+          $('.about').css('display', 'none');
+          $('.education').css('display', 'none');
         }
 
         // now the scroll is only disabled for smaller-screen size devices
@@ -122,6 +123,8 @@ const windowLoaded = () => {
       $('footer').css('display', 'block');
       $('.intro').css('display', 'block');
       $('.contact').css('display', 'block');
+      $('.about').css('display', 'none');
+      $('.education').css('display', 'none');
     }
     // set popUpState back to false so it could work accoridingly.
     popUpState = false;

@@ -106,7 +106,7 @@ b {
 /* Intro section styles */
 
 .Hi {
-    max-width: 74rem;
+    max-width: 150rem;
     margin-right: auto;
     margin-left: auto;
     padding: 0 2rem
@@ -145,11 +145,11 @@ b {
 }
 
 .intro h1 {
-    width: 50%;
-    font-size: 2rem;
-    font-size: calc(2rem + 1vw);
+    width: 100%;
+    font-size: 1rem;
+    font-size: calc(1rem + 1vw);
     line-height: 1.4;
-    font-weight: 400
+    font-weight: 200
 }
 
 @media (max-width: 768px) {
@@ -171,7 +171,92 @@ b {
 }
 
 /* Intro section style ends */
+/* About section begins make it similar to intro */
 
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #333;
+  color: #fff;
+  padding: 1rem 2rem;
+  z-index: 10;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.navbar li {
+  margin-right: 20px;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-weight: 400;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+}
+
+.navbar a:hover {
+  color: #ccc;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.navbar .active {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.profile-picture {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+/* About section ends */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    z-index: 10;
+  }
+  
+  .navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar li {
+    display: inline-block;
+    margin-right: 20px;
+  }
+  
+  .navbar a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .navbar a:hover {
+    color: #ccc;
+  }
 /****************************/
 
 /* Project section begins */
@@ -402,6 +487,58 @@ footer ul li a:hover:after {
 
 /* Contact section ends */
 
+#background {
+  background-image: url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80'); /* Replace with a background image for "Background" */
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.about-me-main {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-me-section {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  margin-bottom: 30px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+#education {
+  background-image: url('images/education.jpg'); /* Replace with a background image for "Education" */
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+#passion {
+  background-image: url('https://images.unsplash.com/photo-1518455026905-c8939c42e2b2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80'); /* Replace with a background image for "Passion" */
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.content-box {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.profile-picture-container {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.profile-picture {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
 /****************************/
 
 /* PopUp section begins */
@@ -447,7 +584,7 @@ footer ul li a:hover:after {
 }
 
 .popUp div:nth-child(2) h1{
-    font-size: 2.3em;
+    font-size: 1em;
     margin-bottom: 1em;
 }
 
@@ -629,7 +766,24 @@ footer ul li a:hover:after {
     z-index: -1;
   }
 }
-
+.education-table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  .education-table th, .education-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .education-table th {
+    background-color: #f0f0f0;
+  }
+  
+  .education-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
 /********************/
 
 /*END OF Styling for form on DESKTOP/PC VIEW  */
