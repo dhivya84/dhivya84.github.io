@@ -17,6 +17,11 @@ const windowLoaded = () => {
   $(popUpElem).hide(1);
 
   mainElem.on('click', e => {
+    // If the clicked item is a dedicated project page link, let the browser handle it
+    if ($(e.target).closest('.project-page-link').length > 0) {
+      return;
+    }
+
     if ($(e.target).closest('.project-item').length > 0) {
       // check if popUp is already 'up'
       if (popUpState === false) {
@@ -45,20 +50,25 @@ const windowLoaded = () => {
         //   below is the data of the project clicked.
         const projectHeading = $(e.target)
           .closest('.project-figure')
-          .children('figcaption')
-          .children('h2')
+          .find('h2')
+          .first()
           .text();
 
         const projectDesc = $(e.target)
           .closest('.project-figure')
-          .children('figcaption')
-          .children('.popUpdesc')
-          .text();
+          .find('.popUpdesc')
+          .first()
+          .html();
 
         const projectImg = $(e.target)
           .closest('.project-figure')
-          .children('img')
+          .find('img')
+          .first()
           .attr('src');
+
+        const projectVideo = $(e.target)
+          .closest('.project-item')
+          .attr('data-video');
 
         const projetGithubRepo = $(e.target)
           .closest('.project-figure')
@@ -73,11 +83,10 @@ const windowLoaded = () => {
           .attr('href');
 
         //  END OF data of the project clicked.
-        // setting the PARAGRAPH of the popUp to match that of the project clicked.
+        // setting the CONTENT of the popUp to match that of the project clicked.
         $(popUpElem)
-          .children('#popUpText')
-          .children('p')
-          .text(`${projectDesc}`);
+          .find('.projectDesc')
+          .html(`${projectDesc}`);
 
         // setting the HEADING of the popUp to match that of the project clicked.
         $(popUpElem)
@@ -85,10 +94,29 @@ const windowLoaded = () => {
           .children('h1')
           .text(`${projectHeading}`);
 
-        // Setting the image here.
-        $(popUpElem)
-          .children('.popUpImg')
-          .css('backgroundImage', `url(${projectImg})`);
+        // Handle Video vs Image
+        const videoElement = $('#projectVideo');
+        if (projectVideo && projectVideo !== '') {
+          $(popUpElem).find('.popUpImg').css('backgroundImage', 'none');
+          videoElement.attr('src', projectVideo);
+          videoElement.show();
+          videoElement[0].load();
+          
+          // Use a promise-based play to handle browser restrictions
+          const playPromise = videoElement[0].play();
+          if (playPromise !== undefined) {
+            playPromise.catch(error => {
+              console.log("Auto-play was prevented. Showing controls for manual play.");
+              // If auto-play fails, the controls are already there for the user to click.
+            });
+          }
+        } else {
+          videoElement.hide();
+          videoElement.attr('src', '');
+          $(popUpElem)
+            .children('.popUpImg')
+            .css('backgroundImage', `url(${projectImg})`);
+        }
 
         // setting up the github linking here
         $(popUpElem)
@@ -110,6 +138,10 @@ const windowLoaded = () => {
   $(closePopUpBtn).on('click', () => {
     if (popUpState === true) {
       $(popUpElem).fadeOut(500);
+      const videoElement = $('#projectVideo');
+      videoElement[0].pause();
+      videoElement.attr('src', '');
+      videoElement[0].load();
 
       //   Unblur the main element and take off overflow: hidden
     }

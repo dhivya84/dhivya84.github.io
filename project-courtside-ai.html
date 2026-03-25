@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Court-Side AI - Dhivya Swaminathan</title>
+    <link href="style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,600,400" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="./index.js"></script>
+</head>
+<body class="project-detail-page">
+    <nav class="navbar">
+        <div class="logo">Dhivya Swaminathan</div>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Me</a></li>
+          <li><a href="projects.html" class="active">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="preloader"></div>
+
+    <main>
+        <section class="project-hero courtside-hero">
+            <div class="hero-content">
+                <h1>Court-Side AI</h1>
+                <p>Computer Vision for Volleyball Analytics</p>
+            </div>
+        </section>
+
+        <section class="project-content-wrapper">
+            <div class="project-video-container">
+                <video autoplay loop muted playsinline controls>
+                    <source src="Assets/videos/courtside_demo.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <div class="project-description-container">
+                <div class="description-block reveal">
+                    <h2>The Challenge</h2>
+                    <p>Volleyball is a high-speed sport with frequent occlusions, rapid player rotations, and a small, fast-moving ball. Existing tracking solutions often failed during "crowded" net plays. The goal was to build a system that could maintain identity persistence for 12+ players simultaneously while processing high-definition 60fps footage without significant latency.</p>
+                </div>
+
+                <div class="description-block reveal">
+                    <h2>Technical Implementation</h2>
+                    <div class="tech-grid">
+                        <div class="tech-card">
+                            <h3>Real-time Detection</h3>
+                            <p>Optimized <strong>YOLOv8</strong> models for specialized sports equipment detection, achieving a mean Average Precision (mAP) of 0.92 on volleyball-specific datasets.</p>
+                        </div>
+                        <div class="tech-card">
+                            <h3>Identity Persistence</h3>
+                            <p>Fused <strong>ByteTrack</strong> motion predictions with <strong>Re-ID</strong> (Re-identification) features to handle player crossovers, maintaining stable IDs even when players were partially obscured.</p>
+                        </div>
+                        <div class="tech-card">
+                            <h3>Geometric Mapping</h3>
+                            <p>Implemented <strong>Homography Transformation</strong> to map 2D pixel coordinates to a real-world 3D court coordinate system, enabling accurate distance and speed calculations.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="description-block reveal">
+                    <h2>The Impact</h2>
+                    <ul>
+                        <li><strong>Efficiency:</strong> Reduced the time required for post-game highlight extraction by <strong>95%</strong> (from 4 hours to under 10 minutes).</li>
+                        <li><strong>Scalability:</strong> Optimized the backend pipeline to handle <strong>1000+ detection events per second</strong>.</li>
+                        <li><strong>Accuracy:</strong> Achieved <strong>98% accuracy</strong> in contact recognition (detecting when a player touches the ball).</li>
+                    </ul>
+                </div>
+
+                <div class="project-links reveal">
+                    <a href="https://github.com/dhivya84/Court-Side-AI" class="btn" target="_blank">View Code on GitHub</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Dhivya Swaminathan. All rights reserved.</p>
+    </footer>
+</body>
+</html>

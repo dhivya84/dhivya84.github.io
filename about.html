@@ -8,153 +8,123 @@
 	<link href="style.css" rel="stylesheet">
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.7;
-            color: #333;
-            background: linear-gradient(135deg, #f0f5f9, #e8f0fe);
-            padding-top: 100px
+            padding-top: 100px;
+            background-color: #fdfdfd;
         }
 
-        
         main {
-            padding: 40px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        section {
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            padding: 40px;
-            margin-bottom: 30px;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-
-        #background {
-            background-image: url('images/background.jpg'); /* Replace with a background image for "Background" */
-            color: white;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
-        }
-
-        #education {
-            background-image: url('images/education.jpg'); /* Replace with a background image for "Education" */
-            color: white;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
-        }
-
-        #passion {
-            background-image: url('images/passion.jpg'); /* Replace with a background image for "Passion" */
-            color: white;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
-        }
-
-        section h2 {
-            color: #007bff;
-            margin-bottom: 25px;
-            font-size: 2.2em;
-            text-align: center;
+            padding: 0;
+            max-width: 100%;
         }
 
         .content-box {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
-        }
-
-        .profile-picture-container {
             text-align: center;
-            margin-bottom: 30px;
         }
 
-        .profile-picture {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        .education-table-wrapper {
+            overflow-x: auto;
+            margin-top: 2rem;
+            background: #fff;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .education-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .education-table th, .education-table td {
+            padding: 1.2rem;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .education-table th {
+            color: #007bff;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+
+        .education-table tr:last-child td {
+            border-bottom: none;
         }
 
         footer {
-            text-align: center;
-            padding: 30px 0;
-            background-color: #f0f5f9;
-            color: #777;
-        }
-
-        @media (max-width: 768px) {
-            .navbar ul li {
-                display: block;
-                margin: 10px 0;
-            }
+            padding: 4rem 0;
+            background: #fff;
+            border-top: 1px solid #eee;
         }
     </style>
 </head>
 <body>
     <nav class="navbar">
+        <div class="logo">Dhivya Swaminathan</div>
         <ul>
-          <li><a href="index.html" >Home</a></li>
-          <li><a href="about.html" class="active">About Me </a></li>
-                <li><a href="projects.html" >Projects</a></li>
-          <li><a href="contact.html">Contact Me</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html" class="active">About Me</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
 
     <main>
-        <section id="background">
-            <div class="content-box"><div class="profile-picture-container">
-                <img src="images/profile.jpg" alt="Your Picture" class="profile-picture">
-            </div>
-                <h2>Background</h2>
-                <p>Hello! I am a developer and product enthusiast with a passion for creating innovative solutions. With a strong background in software development, I have worked on various projects that have honed my skills in coding, problem-solving, and project management.</p>
-            </div>
-        </section>
-
-        <section id="education">
-            <div class="content-box">
-                <h2>Education</h2>
-                <table class="education-table">
-                    <thead>
-                        <tr>
-                            <th>Degree</th>
-                            <th>University</th>
-                            <th>Year</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Bachelor of Engineering in Computer Science</td>
-                            <td>Anna University</td>
-                            <td>2019</td>
-                        </tr>
-                        <tr>
-                            <td>Master of Science in Computer Science</td>
-                            <td>University of Texas</td>
-                            <td>2023</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <p>My education has provided me with a solid foundation in programming languages, software engineering principles, and the latest technologies in the industry.</p>
-            </div>
-        </section>
-
-
-        <section id="passion">
+        <section class="clean-section reveal">
             <div class="content-box">
                 <div class="profile-picture-container">
-                    <img src="your-picture.jpg" alt="Your Picture" class="profile-picture">
+                    <img src="images/profile.jpg" alt="Dhivya Swaminathan" class="profile-picture">
                 </div>
-                <h2>Passion</h2>
-                <p>My passion lies in developing products that make a difference. I enjoy working on projects that challenge me to think creatively and push the boundaries of what is possible. Whether it's building a new app or improving an existing system, I am always excited to take on new challenges and learn new skills.</p>
+                <h2 class="section-title">My Story</h2>
+                <p>I am a software engineer and product strategist driven by a passion for crafting impactful digital solutions. My unique background combines deep technical expertise with strategic product management acumen, cultivated through an MBA and a Master's in Computer Science.</p>
+                <p>My professional journey is characterized by bridging the gap between technical feasibility and market viability, ensuring that every product I contribute to exceeds user expectations and business objectives.</p>
+            </div>
+        </section>
+
+        <section class="clean-section reveal">
+            <div class="content-box">
+                <h2 class="section-title">Education</h2>
+                <div class="education-table-wrapper">
+                    <table class="education-table">
+                        <thead>
+                            <tr>
+                                <th>Degree</th>
+                                <th>University</th>
+                                <th>Year</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Master of Business Administration</td>
+                                <td>University of California - Berkeley</td>
+                                <td>2021</td>
+                            </tr>
+                            <tr>
+                                <td>Bachelor of Engineering in Bio-Informatics</td>
+                                <td>Vellore Institute of Technology</td>
+                                <td>2006</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section class="clean-section reveal">
+            <div class="content-box">
+                <h2 class="section-title">My Passion</h2>
+                <p>I am passionate about building products that make a tangible difference. I thrive on challenges that require creative problem-solving and pushing technical boundaries. From computer vision applications in sports to gamified sustainability solutions, I am always eager to apply cutting-edge technology to real-world problems.</p>
+                <p>I believe in continuous learning and adapting to new technologies to stay ahead in the fast-paced tech landscape. My goal is to lead teams that create innovative products that resonate with users and drive meaningful change.</p>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 Your Name. All rights reserved.</p>
+        <p>&copy; 2024 Dhivya Swaminathan. All rights reserved.</p>
     </footer>
 
 </body>

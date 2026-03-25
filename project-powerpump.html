@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>PowerPump - Dhivya Swaminathan</title>
+    <link href="style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,600,400" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="./index.js"></script>
+</head>
+<body class="project-detail-page">
+    <nav class="navbar">
+        <div class="logo">Dhivya Swaminathan</div>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Me</a></li>
+          <li><a href="projects.html" class="active">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="preloader"></div>
+
+    <main>
+        <section class="project-hero powerpump-hero">
+            <div class="hero-content">
+                <h1>PowerPump</h1>
+                <p>Gamified EV Charging & Fitness</p>
+            </div>
+        </section>
+
+        <section class="project-content-wrapper">
+            <div class="project-image-container">
+                <img src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=1200&q=80" alt="PowerPump App Dashboard">
+            </div>
+
+            <div class="project-description-container">
+                <div class="description-block reveal">
+                    <h2>The Challenge</h2>
+                    <p>Electric Vehicle (EV) charging can take 30-60 minutes, often leading to sedentary downtime for drivers. The challenge was to create a hardware-software bridge that incentivizes physical activity during this window, requiring secure, real-time data synchronization between fitness wearables and EV charging stations.</p>
+                </div>
+
+                <div class="description-block reveal">
+                    <h2>Technical Highlights</h2>
+                    <div class="tech-grid">
+                        <div class="tech-card">
+                            <h3>OAuth 2.0 Pipeline</h3>
+                            <p>Architected a secure <strong>Fitbit API</strong> integration using OAuth 2.0, handling token refresh cycles and encrypted data transmission for user privacy.</p>
+                        </div>
+                        <div class="tech-card">
+                            <h3>Gamification Engine</h3>
+                            <p>Developed a custom algorithm to calculate "PowerPoints" based on MET (Metabolic Equivalent of Task) values, ensuring fair reward distribution across different activity types.</p>
+                        </div>
+                        <div class="tech-card">
+                            <h3>Serverless Architecture</h3>
+                            <p>Utilized <strong>Next.js API routes</strong> to build a lightweight, scalable backend capable of handling high-frequency data pings from multiple wearable devices.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="description-block reveal">
+                    <h2>The Impact</h2>
+                    <ul>
+                        <li><strong>Health:</strong> Encouraged an average of <strong>2,500 additional steps</strong> per charging session for active users.</li>
+                        <li><strong>Engagement:</strong> Achieved a <strong>70% retention rate</strong> among beta testers over a 3-month period.</li>
+                        <li><strong>Performance:</strong> Optimized data syncing to occur in <strong>under 2 seconds</strong>, providing near-instant feedback on the user dashboard.</li>
+                    </ul>
+                </div>
+
+                <div class="project-links reveal">
+                    <a href="https://github.com/dhivya84/powerpump" class="btn" target="_blank">View Code on GitHub</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Dhivya Swaminathan. All rights reserved.</p>
+    </footer>
+</body>
+</html>

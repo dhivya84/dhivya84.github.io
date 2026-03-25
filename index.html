@@ -4,158 +4,125 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dhivya Swaminathan</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-            color: #333;
-            background-image: url('images/intro-bg.jpg'); /* Replace with your image */
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-        }
-
-        header {
-            background-color: rgba(19, 19, 18, 0.9);
-            padding: 20px;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            color: #cfd9ba;
-            z-index: 100;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 20px 0;
-        }
-
-        nav ul li {
-            display: inline;
-            margin: 0 15px;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: #cfd9ba;
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-
-        nav ul li a:hover {
-            color: #007bff;
-        }
-
-        .hero {
-            color: white;
-            text-align: center;
-            padding: 200px 20px; /* Increased padding */
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-        }
-
-        .hero h1 {
-            font-size: 4em; /* Increased font size */
-            margin-bottom: 20px;
-            
-        }
-
-        .hero p {
-            font-size: 1.5em; /* Increased font size */
-            margin-bottom: 40px;
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: #007bff;
-            color: white;
-            padding: 15px 30px; /* Increased padding */
-            text-decoration: none;
-            border-radius: 8px; /* Increased border radius */
-            font-weight: 600;
-            transition: background-color 0.3s ease;
-        }
-
-        .btn:hover {
-            background-color: #0056b3;
-        }
-
-        .welcome-content {
-            padding: 80px 20px;
-            text-align: center;
-            background-color: rgba(255, 255, 255, 0.8);
-            margin: 20px auto;
-            max-width: 1000px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .welcome-content h2 {
-            margin-bottom: 30px;
-            font-size: 2.5em;
-        }
-
-        .welcome-content p {
-            font-size: 1.2em;
-            line-height: 1.8;
-            margin-bottom: 40px;
-        }
-
-        footer {
-            background-color: rgba(0, 0, 0, 0.8);
-            color: white;
-            text-align: center;
-            padding: 30px;
-        }
-
-        .active-link {
-            color: #007bff;
-        }
-    </style>
+    <link href="style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,600,400,700" rel="stylesheet" type="text/css">
 </head>
 <body>
 
-    <header>
-        <h1>Dhivya Swaminathan</h1>
-        <div style="position: absolute; bottom: 20px; left: 20px;">
-          <img src="images/profile.jpg" alt="Profile Picture" style="width: 100px; height: 100px; border-radius: 50%;">   
-        </div>
-        <nav>
-            <ul id="nav-list">
-                <li><a href="about.html">About Me</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                 <li><a href="contact.html">Contact Me</a></li>
-            </ul>
-        </nav>
-    </header> 
+    <!-- Nav Bar-->
+    <nav class="navbar">
+        <div class="logo">Dhivya Swaminathan</div>
+        <ul id="nav-list">
+            <li><a href="index.html" class="active-link">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
 
 
     <section class="hero">
-        <h1>Welcome to My Digital Space</h1>
-        <p>Where Innovation Meets Engineering Excellence.</p>
-        <a href="projects.html" class="btn">Explore My Projects</a>
+        <div class="hero-content reveal">
+            <img src="images/profile.jpg" alt="Dhivya Swaminathan" class="profile-img">
+            <h1>Building the Future of Digital Experiences</h1>
+            <p><strong>Software Engineer | MBA | Product Strategist</strong></p>
+            <p style="font-size: 1.1rem; max-width: 600px; margin: 0 auto 2.5rem; opacity: 0.8;">Bridging the gap between deep technical engineering and strategic business value. Specialized in AI, Computer Vision, and Scalable Systems.</p>
+            <div class="hero-btns">
+                <a href="projects.html" class="btn">View My Work</a>
+                <a href="#" class="btn btn-outline">📄 Download Resume</a>
+            </div>
+        </div>
     </section>
 
-    <section class="welcome-content" id="welcome">
-        <h2>About My Work</h2>
+    <section class="experience clean-section reveal">
+        <div class="content-box">
+            <h2 class="section-title">Professional Experience</h2>
+            <div class="experience-timeline">
+                <div class="exp-item">
+                    <div class="exp-header">
+                        <h3>Graduate Product Researcher</h3>
+                        <span>2023 - 2024</span>
+                    </div>
+                    <p class="exp-org">University of California, Irvine</p>
+                    <ul>
+                        <li>Led cross-functional research on AI-driven user interfaces, achieving a 20% improvement in user task completion speed.</li>
+                        <li>Collaborated with engineering teams to translate complex technical requirements into actionable product roadmaps (PRDs).</li>
+                    </ul>
+                </div>
+                <div class="exp-item">
+                    <div class="exp-header">
+                        <h3>Software Engineering Lead (Academic)</h3>
+                        <span>2020 - 2021</span>
+                    </div>
+                    <p class="exp-org">University of Texas at Dallas</p>
+                    <ul>
+                        <li>Architected a distributed tracking system for volleyball analytics, handling 1000+ data points per second with YOLOv8.</li>
+                        <li>Managed a team of 4 junior developers, implementing Agile methodologies and reducing delivery cycles by 30%.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="skills-section reveal">
+        <h2 class="section-title">Technical Expertise</h2>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h4>Languages & Backend</h4>
+                <div class="skill-tags">
+                    <span>Python</span><span>Go</span><span>C++</span><span>Node.js</span><span>Java</span><span>SQL</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h4>AI & Machine Learning</h4>
+                <div class="skill-tags">
+                    <span>YOLOv8</span><span>PyTorch</span><span>TensorFlow</span><span>LLM Prompting</span><span>OpenCV</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h4>Cloud & Infrastructure</h4>
+                <div class="skill-tags">
+                    <span>GCP</span><span>AWS</span><span>Docker</span><span>Kubernetes</span><span>Vite</span><span>Git</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h4>Product & Strategy</h4>
+                <div class="skill-tags">
+                    <span>Agile</span><span>PRD Development</span><span>UX Strategy</span><span>Market Analysis</span><span>MBA</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="welcome-content reveal" id="welcome">
+        <h2>Bridging Technology and Strategy</h2>
         <p>
-            I am a software engineer passionate about building robust and scalable applications. My focus is on creating solutions that not only meet technical requirements but also provide exceptional user experiences. My expertise spans across various technologies, and I am always eager to learn and adapt to new challenges.
+            With a unique blend of software engineering expertise and strategic product management acumen, I specialize in crafting impactful digital solutions that bridge the gap between technical feasibility and market viability.
         </p>
         <p>
-            This portfolio showcases my journey and the projects I have worked on. Each project represents a unique problem solved and a step forward in my professional growth. I believe in the power of collaboration and continuous improvement, and I strive to apply these principles in every project I undertake.
+            My goal is to build products that not only meet technical requirements but also provide exceptional user experiences and drive business objectives.
         </p>
     </section>
 
-    <section id="about">
-    </section>
-
-    <section id="products">
-    </section>
-
-    <section id="contact">
+    <section class="competencies reveal">
+        <h2 class="section-title">Core Competencies</h2>
+        <div class="competencies-grid">
+            <div class="comp-item">
+                <span style="font-size: 3rem; margin-bottom: 1rem; display: block;">💻</span>
+                <h3>Software Engineering</h3>
+                <p>Expertise in modern web technologies, scalable backend architectures, and secure API design.</p>
+            </div>
+            <div class="comp-item">
+                <span style="font-size: 3rem; margin-bottom: 1rem; display: block;">📊</span>
+                <h3>Product Strategy</h3>
+                <p>Bridge technical depth with business goals through strategic planning and market analysis.</p>
+            </div>
+            <div class="comp-item">
+                <span style="font-size: 3rem; margin-bottom: 1rem; display: block;">🤖</span>
+                <h3>Computer Vision & AI</h3>
+                <p>Developing high-impact AI solutions for real-world applications like sports analytics and predictive modeling.</p>
+            </div>
+        </div>
     </section>
 
     <footer>
