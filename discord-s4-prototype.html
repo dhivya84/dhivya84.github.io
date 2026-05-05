@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Discord — 04 Prototype &amp; Roadmap</title>
+  <link href="discord-shared.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,600,400,700" rel="stylesheet">
+</head>
+<body>
+
+<nav class="dc-nav">
+  <a class="logo" href="projects.html">← Dhivya Swaminathan</a>
+  <ul>
+    <li><a href="discord-overview.html">Overview</a></li>
+    <li><a href="discord-s1-problem.html">Problem</a></li>
+    <li><a href="discord-s2-research.html">Research</a></li>
+    <li><a href="discord-s3-prd.html">PRD</a></li>
+    <li><a href="discord-s4-prototype.html" class="active">Prototype</a></li>
+  </ul>
+</nav>
+
+<div class="dc-hero">
+  <div>
+    <h1>04 — Prototype &amp; Roadmap</h1>
+    <p>Concept Scoring, Live Demos, RICE Framework &amp; Phased Rollout</p>
+  </div>
+  <div class="hero-nav">
+    <a href="discord-s3-prd.html">← PRD</a>
+    <a href="discord-overview.html">Overview</a>
+  </div>
+</div>
+
+<main class="dc-main">
+
+  <div class="dc-card">
+    <span class="section-tag">Prototype Concept</span>
+    <h2>What We Built &amp; Why</h2>
+    <p>The prototype uses <strong>role-first personalization</strong> to filter the server into 2–3 relevant zones based on a user's selection. Instead of facing the full channel list, new users experience an interactive, guided tour of the community. The goal is to test whether a structured flow reduces blank-canvas paralysis and the impersonal onboarding experience that currently exists.</p>
+    <div class="highlight-box">
+      <strong>Execution:</strong> 20 moderated user sessions with participants who joined at least one new server in the past 60 days with a low participation rate. Users drove the prototype without interruption and were allowed to skip at any point.
+    </div>
+    <h3>Three Risks the Prototype Tests</h3>
+    <div class="two-col">
+      <div class="two-col-card">
+        <h4>Usability Risk</h4>
+        <p>Will a structured, guided flow introduce unwanted friction for users accustomed to open exploration? Measured via skip rate and at which step users reach for the skip button.</p>
+      </div>
+      <div class="two-col-card">
+        <h4>Value Risk</h4>
+        <p>Will personalized guided tours actually move users from passive observer to active participant? Measured via % of users who use the LLM-generated icebreaker vs. write their own.</p>
+      </div>
+      <div class="two-col-card">
+        <h4>Viability Risk</h4>
+        <p>Will server admins extract value from the guided tour or opt out? Measured via admin opt-in rate and satisfaction scores among server owners who tested the feature.</p>
+      </div>
+      <div class="two-col-card">
+        <h4>Prototype Link</h4>
+        <p>The prototype is live and linked below. It includes the guided zone tour, role-selection, and the LLM-generated first-post prompt experience.</p>
+      </div>
+    </div>
+    <div class="btn-row">
+      <a href="https://discord-prototype-1.vercel.app" class="btn btn-primary" target="_blank">🔗 Live Prototype v1</a>
+      <a href="https://discord-prototype-v3.vercel.app" class="btn btn-secondary" target="_blank">🔗 Live Prototype v3</a>
+    </div>
+  </div>
+
+  <div class="dc-card">
+    <span class="section-tag">Concept Scoring</span>
+    <h2>Top Prototype Ideas</h2>
+    <p>Four prototype concepts were evaluated using a weighted scoring matrix across 10 value propositions (Guided Entry, Reduced Overwhelm, First Post Scaffolding, Social Safety, etc.). Top concepts selected for testing:</p>
+    <table class="dc-table">
+      <thead><tr><th>ID</th><th>Concept</th><th>Core Value Proposition</th></tr></thead>
+      <tbody>
+        <tr><td><strong>J</strong></td><td>Mission Board</td><td>Gamified micro-quest board for the first week — optional, orderable tasks (react, introduce yourself, reply) with visible progress. Reduces "trapped in a tutorial" risk while scaffolding participation.</td></tr>
+        <tr><td><strong>F</strong></td><td>Interest-Powered Channels</td><td>Uses onboarding interest data to dynamically rank and show only 5 relevant channels instead of 50 alphabetical ones. Progressive disclosure powered by preference data.</td></tr>
+        <tr><td><strong>T</strong></td><td>Personalized Welcome</td><td>At end of onboarding, generates a personalized message explaining which channels match the user's interests and what conversations are happening now.</td></tr>
+        <tr><td><strong>E</strong></td><td>AI Training Wheels with Graceful Handoff</td><td>AI buddy for first 48 hours with prompts and conversation starters. After 3 exchanges, transitions to a real human buddy — so the handoff feels earned, not abrupt.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="dc-card">
+    <span class="section-tag">RICE Prioritization</span>
+    <h2>How We Ranked the Three Tiers</h2>
+    <table class="dc-table">
+      <thead><tr><th>Tier</th><th>Reach</th><th>Impact</th><th>Confidence</th><th>Effort</th><th>Score</th><th>Timeline</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Tier 1: Structural Onboarding</strong></td><td>High (100% newcomers)</td><td>High (70% churn addressed)</td><td>High (validated, 20 users)</td><td>Low (UI-layer only)</td><td><strong>9/10</strong></td><td>Q3–Q4 2026</td></tr>
+        <tr><td><strong>Tier 2: Social Safety Nets</strong></td><td>Medium (opt-in)</td><td>High (21.5% MJ benchmark)</td><td>Medium (needs EA testing)</td><td>Medium (moderator coord.)</td><td><strong>6/10</strong></td><td>Q1–Q3 2027</td></tr>
+        <tr><td><strong>Tier 3: AI-Powered Engagement</strong></td><td>High (all active users)</td><td>High (long-term retention)</td><td>Medium (pending deps.)</td><td>High (Legal, T&amp;S, ML)</td><td><strong>5/10</strong></td><td>Q4 2027+</td></tr>
+      </tbody>
+    </table>
+    <p style="margin-top:14px; font-size:0.88rem;">Note: AI features deferred to Q4 2027+ due to Legal and Trust &amp; Safety dependencies, and based on negative precedent from Snapchat's My AI rollout where users reported the bot as "creepy and clingy."</p>
+  </div>
+
+  <div class="dc-card">
+    <span class="section-tag">Roadmap</span>
+    <h2>Phased Rollout: Q3 2026 → Q4 2027+</h2>
+    <table class="dc-table">
+      <thead><tr><th>Theme</th><th>Now: Q3–Q4 2026</th><th>Next: Q1–Q3 2027</th><th>Later: Q4 2027+</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Focus</strong></td><td>Reduce Structural Barriers</td><td>Build Social Safety Nets</td><td>Intelligent &amp; Scalable Retention</td></tr>
+        <tr><td><strong>Key Initiatives</strong></td><td>Role-First Personalization; 5-min Guided Zone Tours; Curated Rules (replace text walls)</td><td>Newcomer-Only Channels (Midjourney-style); Social Validation Loops; Participation Rituals</td><td>LLM Icebreakers; Predictive Channel Routing; AI Moderator for newcomer welcomes</td></tr>
+        <tr><td><strong>North Star Target</strong></td><td>20%+ of newcomers post in &lt;24 hrs (baseline: ~8%)</td><td>15%+ lurker-to-participant conversion (MJ benchmark: 21.5%)</td><td>25%+ 30-day retention (baseline: ~15%)</td></tr>
+      </tbody>
+    </table>
+
+    <h3 style="margin-top:24px;">Key Dependencies</h3>
+    <div class="two-col">
+      <div class="two-col-card">
+        <h4>Engineering</h4>
+        <p>Must prioritize the "Zone Tour" logic and the underlying channel recommendation engine for Tier 1.</p>
+      </div>
+      <div class="two-col-card">
+        <h4>Trust &amp; Safety</h4>
+        <p>Hard dependency for vetting AI-generated participation prompts to prevent harassment or spam before Tier 3.</p>
+      </div>
+      <div class="two-col-card">
+        <h4>Legal</h4>
+        <p>Requires sign-off on cross-server data usage and GDPR/CCPA compliance for personalized recommendations.</p>
+      </div>
+      <div class="two-col-card">
+        <h4>Marketing / Community</h4>
+        <p>Must recruit the initial 50 Early Access moderators to validate the opt-in model for Tier 2.</p>
+      </div>
+    </div>
+
+    <div class="btn-row">
+      <a href="https://discord-prototype-1.vercel.app" class="btn btn-primary" target="_blank">🔗 Live Prototype v1</a>
+      <a href="https://discord-prototype-v3.vercel.app" class="btn btn-secondary" target="_blank">🔗 Live Prototype v3</a>
+      <a href="https://docs.google.com/document/d/1yFA14S0xG5r3CTl5P21GnoOG5iQsZ9Y8/edit?usp=sharing" class="btn btn-secondary" target="_blank">View Full Document</a>
+    </div>
+  </div>
+
+</main>
+
+<footer class="dc-footer">
+  <p>Dhivya Swaminathan &mdash; <a href="discord-s3-prd.html">← PRD</a> &nbsp;|&nbsp; <a href="discord-overview.html">Overview</a></p>
+</footer>
+
+</body>
+</html>

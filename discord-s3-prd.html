@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Discord — 03 PRD</title>
+  <link href="discord-shared.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,600,400,700" rel="stylesheet">
+</head>
+<body>
+
+<nav class="dc-nav">
+  <a class="logo" href="projects.html">← Dhivya Swaminathan</a>
+  <ul>
+    <li><a href="discord-overview.html">Overview</a></li>
+    <li><a href="discord-s1-problem.html">Problem</a></li>
+    <li><a href="discord-s2-research.html">Research</a></li>
+    <li><a href="discord-s3-prd.html" class="active">PRD</a></li>
+    <li><a href="discord-s4-prototype.html">Prototype</a></li>
+  </ul>
+</nav>
+
+<div class="dc-hero">
+  <div>
+    <h1>03 — Product Requirements Document</h1>
+    <p>Strategic Pillars, Metrics, Risks &amp; Guardrails</p>
+  </div>
+  <div class="hero-nav">
+    <a href="discord-s2-research.html">← Research</a>
+    <a href="discord-s4-prototype.html">Next: Prototype →</a>
+  </div>
+</div>
+
+<main class="dc-main">
+
+  <div class="dc-card">
+    <span class="section-tag">Context &amp; Goal</span>
+    <h2>What We Are Building &amp; Why</h2>
+    <p>This PRD defines product solutions to increase early participation by reducing friction and uncertainty during the initial user experience. Discord's current onboarding tools — rules pages and pinned messages — are static, text-heavy, and passive. New users are met with long rule messages, multiple pinned posts, and dozens of channels, causing information overload before they have taken a single action.</p>
+    <div class="highlight-box">
+      <strong>Product Goal:</strong> Reduce the <strong>70% churn-in-24-hours</strong> rate by increasing the percentage of new users who take at least one action (post their first message) within their first session.
+    </div>
+    <h3>Success Metrics</h3>
+    <ul>
+      <li><strong>North Star:</strong> Average user retention rate on large servers (100+ users)</li>
+      <li>Time to first post after joining</li>
+      <li>Number of posts made within 24 hours of joining</li>
+      <li>7-day retention rate</li>
+    </ul>
+    <h3>Guardrail Metrics</h3>
+    <ul>
+      <li>Spam or low-quality message rate</li>
+      <li>Moderator workload</li>
+      <li>Opt-out rate from server owners</li>
+    </ul>
+  </div>
+
+  <div class="dc-card">
+    <span class="section-tag">Pillar 1</span>
+    <h2>Structured Onboarding for First Participation</h2>
+    <p><strong>Goal:</strong> Create a clear, time-bound onboarding session (completable in &lt;5 minutes) that familiarizes the user with community basics and guides them toward their first post.</p>
+    <div class="two-col">
+      <div class="two-col-card">
+        <h4>Driver 1: Reduce Time to Value</h4>
+        <p>Help users quickly understand the server structure and identify the 2–3 key channels relevant to them, rather than presenting all 40+ at once.</p>
+      </div>
+      <div class="two-col-card">
+        <h4>Driver 2: Reduce Channel Selection Paralysis</h4>
+        <p>Role-first personalization: users select interests to see only relevant "zones" — a guided tour of the server scoped to what matters to them.</p>
+      </div>
+      <div class="two-col-card">
+        <h4>Driver 3: Overcome Blank Canvas Anxiety</h4>
+        <p>Pre-populated, LLM-generated icebreaker prompts and suggested first messages that give users a structured script and lower the emotional cost of a first post.</p>
+      </div>
+      <div class="two-col-card">
+        <h4>Skip Option</h4>
+        <p>A persistent Skip option at every step. Skip rate is tracked as a guardrail metric to monitor the flexibility-vs-friction tradeoff.</p>
+      </div>
+    </div>
+    <h3>Traction Metrics</h3>
+    <ul>
+      <li>Onboarding flow completion rate</li>
+      <li>Drop-off rate at the rules agreement screen</li>
+      <li>% of users who click into a recommended starter channel during onboarding</li>
+    </ul>
+    <h3>Engagement Metrics</h3>
+    <ul>
+      <li>Interaction rate with pre-populated icebreaker prompts</li>
+      <li>Time to first post after joining</li>
+      <li>Number of posts within 24 hours</li>
+    </ul>
+    <h3>Risks &amp; Counter-Metrics</h3>
+    <p>Standardization may conflict with Discord's sandbox-style flexibility; users may feel trapped in a tutorial. Quality of posts must be monitored against quantity to prevent spam.</p>
+    <ul>
+      <li>Skip rate (% of users who bypass structured onboarding)</li>
+      <li>% of server owners who disable the feature</li>
+    </ul>
+  </div>
+
+  <div class="dc-card">
+    <span class="section-tag">Pillar 2</span>
+    <h2>Newcomer Cohorts for Safe Participation</h2>
+    <p><strong>Goal:</strong> New users feel like they are entering a party where everyone already knows each other. Create newcomer experiences — modeled on Midjourney's newbie channels — that make users feel comfortable engaging and eventually become active participants.</p>
+    <div class="two-col">
+      <div class="two-col-card">
+        <h4>Driver 1: Reduce Social Risk &amp; Anxiety</h4>
+        <p>Temporary newcomer-only welcome channels where new users interact with peers who are also joining for the first time — removing the intimidation of high-traffic established channels.</p>
+      </div>
+      <div class="two-col-card">
+        <h4>Driver 2: Increase Social Validation</h4>
+        <p>Encourage early positive engagement through reactions, replies, and guided prompts that reinforce participation and help newcomers feel acknowledged and seen.</p>
+      </div>
+      <div class="two-col-card">
+        <h4>Driver 3: Participation Rituals</h4>
+        <p>AI-generated, low-stakes introduction prompts and guided first-task activities that help users transition from passive observers to active contributors gradually.</p>
+      </div>
+      <div class="two-col-card">
+        <h4>Graduated Transition</h4>
+        <p>A deliberate transition path from the newcomer channel to the main server — not an abrupt cutoff — prevents the anxiety spike that kills participation when the training wheels come off.</p>
+      </div>
+    </div>
+    <h3>Traction Metrics</h3>
+    <ul>
+      <li>% of new users who join the newcomer cohort channel after entering a server</li>
+      <li>Conversion rate from lurker to participant within the cohort</li>
+      <li>Adoption rate of guided introduction prompts</li>
+    </ul>
+    <h3>Engagement Metrics</h3>
+    <ul>
+      <li>Ratio of newcomer messages that receive at least one positive reaction or reply</li>
+      <li>Frequency of peer-to-peer reactions within the cohort</li>
+      <li>Avg. messages sent while participating in the newcomer cohort</li>
+    </ul>
+    <h3>Outcome Metrics</h3>
+    <ul>
+      <li>% of users who continue contributing in general channels after the cohort expires</li>
+      <li>Total message volume: cohort participants vs. non-participants (lift)</li>
+      <li>User satisfaction scores for new community members</li>
+    </ul>
+    <h3>Risks &amp; Counter-Metrics</h3>
+    <ul>
+      <li>Drop-off rate of users active in the newcomer cohort who go silent after transitioning to main channels</li>
+      <li>Reported harassment incidents within verified newcomer cohorts</li>
+      <li>Moderator opt-out rate from enabling newcomer cohorts</li>
+    </ul>
+  </div>
+
+  <div class="dc-card">
+    <span class="section-tag">Strategic Prioritization</span>
+    <h2>Why These Two Pillars, In This Order</h2>
+    <p>Optimizing for newcomers — even at the expense of short-term friction for power users — represents a meaningful strategic shift for Discord. Historically, Discord's product velocity has heavily favored community admins, moderators, and power-gamers who demand deep customization.</p>
+    <ol>
+      <li><strong>Structured Onboarding first</strong> — addresses the earliest moment of friction. Reducing cognitive overload creates the foundation for engagement before social dynamics even come into play.</li>
+      <li><strong>Newcomer Cohorts second</strong> — once the blank-canvas anxiety is reduced, the focus shifts to social anxiety and early reinforcement through peer interaction.</li>
+    </ol>
+    <div class="highlight-box">
+      <strong>Execution recommendation:</strong> Begin with localized, opt-in experiments on a cohort of medium-sized servers. Demonstrating measurable retention improvements in these environments will build the case for broader platform-wide adoption.
+    </div>
+    <div class="btn-row">
+      <a href="discord-s4-prototype.html" class="btn btn-primary">04: Prototype &amp; Roadmap →</a>
+      <a href="https://docs.google.com/document/d/1yFA14S0xG5r3CTl5P21GnoOG5iQsZ9Y8/edit?usp=sharing" class="btn btn-secondary" target="_blank">View Full Document</a>
+    </div>
+  </div>
+
+</main>
+
+<footer class="dc-footer">
+  <p>Dhivya Swaminathan &mdash; <a href="discord-s2-research.html">← Research</a> &nbsp;|&nbsp; <a href="discord-s4-prototype.html">Prototype →</a></p>
+</footer>
+
+</body>
+</html>

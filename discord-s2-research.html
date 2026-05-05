@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Discord — 02 User Research</title>
+  <link href="discord-shared.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,600,400,700" rel="stylesheet">
+</head>
+<body>
+
+<nav class="dc-nav">
+  <a class="logo" href="projects.html">← Dhivya Swaminathan</a>
+  <ul>
+    <li><a href="discord-overview.html">Overview</a></li>
+    <li><a href="discord-s1-problem.html">Problem</a></li>
+    <li><a href="discord-s2-research.html" class="active">Research</a></li>
+    <li><a href="discord-s3-prd.html">PRD</a></li>
+    <li><a href="discord-s4-prototype.html">Prototype</a></li>
+  </ul>
+</nav>
+
+<div class="dc-hero">
+  <div>
+    <h1>02 — User Research</h1>
+    <p>User Interviews, Sentiment Analysis &amp; Quantitative Data</p>
+  </div>
+  <div class="hero-nav">
+    <a href="discord-s1-problem.html">← Problem</a>
+    <a href="discord-s3-prd.html">Next: PRD →</a>
+  </div>
+</div>
+
+<main class="dc-main">
+
+  <div class="dc-card">
+    <span class="section-tag">Research Approach</span>
+    <h2>How We Validated the Problem</h2>
+    <p>Research was designed to understand behavior during the earliest moments of joining a community — to identify where hesitation begins and what signals influence whether someone participates or leaves. We used a mixed-methods approach combining user interviews (guided by Mom Test principles), social platform sentiment analysis, and quantitative behavioral data.</p>
+    <p><strong>Key research questions:</strong></p>
+    <ul>
+      <li>What do users do in the first 10 minutes after joining a new community?</li>
+      <li>Where do users feel confused or uncertain when navigating servers?</li>
+      <li>What signals help users decide whether to participate or disengage?</li>
+      <li>What parts of onboarding or discovery feel overwhelming or unclear?</li>
+    </ul>
+  </div>
+
+  <div class="dc-card">
+    <span class="section-tag">User Interviews</span>
+    <h2>Key Themes from 10 Interviews</h2>
+    <p>Participants ranged from Gen Alpha students to tenured Millennial professionals. Interviews were conducted as walkthroughs — users navigated new communities live while the team observed.</p>
+    <div class="two-col">
+      <div class="two-col-card">
+        <h4>Cognitive Overload</h4>
+        <p>"I had no idea what to do. How do I find something? I checked Reddit before ChatGPT."</p>
+        <p>Users described the interface as overwhelming and anxiety-inducing, even after years of use. One user rated onboarding 3/5, citing "too much to do with very little guidance on where to begin."</p>
+      </div>
+      <div class="two-col-card">
+        <h4>Norm Ambiguity</h4>
+        <p>Users had to read extensive documentation to understand channel expectations and often lost interest before finishing. They consistently preferred brief instructions over long docs or videos.</p>
+      </div>
+      <div class="two-col-card">
+        <h4>Social Risk</h4>
+        <p>"Feels like walking into a private party where everyone already knows each other." Non-gamers questioned whether they even belonged on Discord, and several reported relying on friends or WhatsApp to learn basic actions.</p>
+      </div>
+      <div class="two-col-card">
+        <h4>Discovery Friction</h4>
+        <p>Search was described as frustrating — one user searching for pottery groups repeatedly got Harry Potter communities. Poor discovery created friction before meaningful engagement even started.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="dc-card">
+    <span class="section-tag">Sentiment Analysis</span>
+    <h2>50 Reddit &amp; App Store Reviews</h2>
+    <p>We analyzed Reddit threads, App Store reviews, and blogs focused on onboarding and retention. Results were grouped into four pain categories:</p>
+    <div class="stats-row">
+      <div class="stat-card"><div class="stat-num">44%</div><div class="stat-label">Cognitive Overload / Complex Onboarding (22 signals)</div></div>
+      <div class="stat-card"><div class="stat-num">24%</div><div class="stat-label">Social Accessibility / "Crashing a Private Party" (12 signals)</div></div>
+      <div class="stat-card"><div class="stat-num">20%</div><div class="stat-label">Technical Friction &amp; Bugs (10 signals)</div></div>
+      <div class="stat-card"><div class="stat-num">12%</div><div class="stat-label">Miscellaneous / Emojis (6 signals)</div></div>
+    </div>
+    <h3>Top Raw Pain Points</h3>
+    <table class="dc-table">
+      <thead><tr><th>Category</th><th>Raw Signal</th><th>Severity</th></tr></thead>
+      <tbody>
+        <tr><td>Cognitive Load</td><td>"Joined and saw 50 channels; immediately muted and never went back."</td><td>5/5</td></tr>
+        <tr><td>Social Friction</td><td>"Feels like walking into a private party where everyone already knows each other."</td><td>4/5</td></tr>
+        <tr><td>Technical Bug</td><td>"Onboarding flow is missing the Continue button on mobile/web."</td><td>5/5</td></tr>
+        <tr><td>UI Hiding</td><td>"The Browse Channels feature hid the #Rules channel; I got banned instantly."</td><td>4/5</td></tr>
+        <tr><td>Navigation</td><td>"Forward/Back buttons are broken; I can't find the channel I was just in."</td><td>3/5</td></tr>
+        <tr><td>Noise</td><td>"I join just for the emojis or a one-time answer, then the server is just noise."</td><td>2/5</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="dc-card">
+    <span class="section-tag">Quantitative Data</span>
+    <h2>Retention &amp; Behavioral Stats</h2>
+    <p>Data collected from <a href="https://www.demandsage.com/discord-statistics/" target="_blank">Demand Sage</a> and community research showed that ~80% of users join communities through a direct invite link, while ~16% find servers via organic search.</p>
+    <ul>
+      <li>Long-term retention rate of a successful public server: <strong>~15%</strong></li>
+      <li><strong>70–75%</strong> of people leave or mute a community within 24 hours</li>
+      <li>Users who post at least once after joining tend to remain active for <strong>at least 7 days</strong></li>
+      <li>Servers with &gt;3 verification steps see a <strong>35% higher day-1 churn</strong></li>
+      <li>If a new user's first message goes unanswered for 4+ hours, likelihood of a second post <strong>drops by half</strong></li>
+      <li>In servers where regulars dominate 90% of chat, <strong>92% of newcomers never post</strong></li>
+    </ul>
+  </div>
+
+  <div class="dc-card">
+    <span class="section-tag">Competitive Analysis</span>
+    <h2>Discord vs. The Market</h2>
+    <p>Discord's closest analog is a <strong>community operating system</strong> — not a chat app. It enables groups to persist outside algorithmic feeds, positioning it alongside Reddit, Roblox social layers, Patreon communities, and emerging creator ecosystems.</p>
+    <p>Discord has largely saturated its core early-adopter segments (gamers, tech, fandoms). Future growth depends on mainstream cohorts — education, local groups, creators, professional networks — users with <strong>lower tolerance for setup complexity</strong> and weaker motivation to learn tooling. This creates a structural tension: power-user flexibility drives depth, but simplicity drives expansion.</p>
+    <h3>Midjourney Case Study: The Playbook That Works</h3>
+    <p>Midjourney grew to <strong>19M+ members</strong> — the largest non-gaming Discord community — with a <strong>21.5% conversion rate</strong> from passive watcher to active creator. How?</p>
+    <ul>
+      <li><strong>Numbered #newbie channels:</strong> Funnels new users into small cohorts, creating "intimacy at scale" and eliminating the overwhelm of competing with 19M people for attention.</li>
+      <li><strong>Observation learning:</strong> Image generation is public — new users learn by watching others succeed and fail in real time, not by reading documentation.</li>
+      <li><strong>/help bot commands:</strong> Instant feedback creates a powerful positive reinforcement loop and transforms a lonely task into a shared social ritual.</li>
+    </ul>
+    <div class="btn-row">
+      <a href="discord-s3-prd.html" class="btn btn-primary">03: PRD →</a>
+      <a href="https://docs.google.com/document/d/1yFA14S0xG5r3CTl5P21GnoOG5iQsZ9Y8/edit?usp=sharing" class="btn btn-secondary" target="_blank">View Full Document</a>
+    </div>
+  </div>
+
+</main>
+
+<footer class="dc-footer">
+  <p>Dhivya Swaminathan &mdash; <a href="discord-s1-problem.html">← Problem</a> &nbsp;|&nbsp; <a href="discord-s3-prd.html">PRD →</a></p>
+</footer>
+
+</body>
+</html>
