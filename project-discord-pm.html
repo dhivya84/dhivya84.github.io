@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Discord User Retention - Dhivya Swaminathan</title>
+    <link href="style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,600,400" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="./index.js"></script>
+    <style>
+        .pm-hero {
+            background: linear-gradient(135deg, #5865F2 0%, #404EED 50%, #2C2F8F 100%);
+        }
+        .pm-section {
+            background: #fff;
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 32px;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+        }
+        .pm-section h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #23272a;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .pm-section .section-tag {
+            display: inline-block;
+            background: #5865F2;
+            color: #fff;
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            padding: 3px 10px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+        .pm-section p, .pm-section li {
+            color: #4f5660;
+            line-height: 1.75;
+            font-size: 0.97rem;
+        }
+        .pm-section ul {
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+        .pm-section ul li {
+            margin-bottom: 6px;
+        }
+        .stats-row {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+            margin: 20px 0 10px 0;
+        }
+        .stat-card {
+            background: #f2f3ff;
+            border-left: 4px solid #5865F2;
+            border-radius: 8px;
+            padding: 16px 22px;
+            min-width: 160px;
+            flex: 1;
+        }
+        .stat-card .stat-num {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #5865F2;
+            line-height: 1.1;
+        }
+        .stat-card .stat-label {
+            font-size: 0.82rem;
+            color: #666;
+            margin-top: 4px;
+        }
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+            margin-top: 18px;
+        }
+        .pillar-card {
+            background: #f8f9ff;
+            border-radius: 8px;
+            padding: 20px;
+            border: 1px solid #e3e5ff;
+        }
+        .pillar-card h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #23272a;
+            margin-bottom: 6px;
+        }
+        .pillar-card p {
+            font-size: 0.88rem;
+            color: #555;
+            line-height: 1.6;
+        }
+        .roadmap-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 18px;
+            font-size: 0.9rem;
+        }
+        .roadmap-table th {
+            background: #5865F2;
+            color: #fff;
+            padding: 10px 14px;
+            text-align: left;
+            font-weight: 600;
+        }
+        .roadmap-table td {
+            padding: 10px 14px;
+            border-bottom: 1px solid #e9eaf0;
+            color: #4f5660;
+            vertical-align: top;
+        }
+        .roadmap-table tr:nth-child(even) td {
+            background: #f8f9ff;
+        }
+        .btn-row {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin-top: 28px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.92rem;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+        .btn:hover { opacity: 0.85; }
+        .btn-primary {
+            background: #5865F2;
+            color: #fff;
+        }
+        .btn-secondary {
+            background: #fff;
+            color: #5865F2;
+            border: 2px solid #5865F2;
+        }
+        .prototype-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 14px;
+        }
+        .prototype-chip {
+            background: #f2f3ff;
+            border: 1px solid #c7cbff;
+            border-radius: 20px;
+            padding: 6px 16px;
+            font-size: 0.85rem;
+            color: #5865F2;
+            font-weight: 500;
+        }
+        @media (max-width: 700px) {
+            .pillars-grid { grid-template-columns: 1fr; }
+            .stats-row { gap: 12px; }
+            .pm-section { padding: 24px 16px; }
+        }
+    </style>
+</head>
+<body class="project-detail-page">
+    <nav class="navbar">
+        <div class="logo">Dhivya Swaminathan</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="projects.html" class="active">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="preloader"></div>
+
+    <main>
+        <section class="project-hero pm-hero">
+            <div class="hero-content">
+                <h1>Discord User Retention</h1>
+                <p>End-to-End Product Management Case Study</p>
+            </div>
+        </section>
+
+        <section class="project-content-wrapper">
+            <div class="project-description-container">
+
+                <!-- SECTION 1: PROBLEM SYNTHESIS -->
+                <div class="pm-section description-block reveal">
+                    <span class="section-tag">&#128269; Section 1</span>
+                    <h2>Problem Synthesis</h2>
+                    <p>Discord has a critical participation gap: <strong>92% of newcomers never post a single message</strong>, and <strong>70% of users leave or mute a community within 24 hours</strong> of joining. Long-term public server retention sits at just 15%. The barrier is not technical &mdash; it is psychological and social.</p>
+                    <div class="stats-row">
+                        <div class="stat-card">
+                            <div class="stat-num">92%</div>
+                            <div class="stat-label">Newcomers who never post</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-num">70%</div>
+                            <div class="stat-label">Leave within 24 hours</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-num">15%</div>
+                            <div class="stat-label">Long-term public server retention</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-num">7 days</div>
+                            <div class="stat-label">Retention if user posts even once</div>
+                        </div>
+                    </div>
+                    <p style="margin-top:16px;">Three forces drive hesitation among new users: <strong>Cognitive Overload</strong> (40+ channels on arrival), <strong>Social Risk Anxiety</strong> (&ldquo;walking into a party where everyone already knows each other&rdquo;), and <strong>Blank Canvas Paralysis</strong> (no guidance on what to say or where). Because Discord&rsquo;s growth depends on a flywheel between communities and users, solving the join&rarr;participate conversion gap is the highest-leverage opportunity on the platform.</p>
+                    <p><strong>Target User:</strong> New users joining medium-to-large servers (100+ members) via direct invite link &mdash; users with clear intent who are most likely to stay if their first experience meets their needs.</p>
+                    <div class="btn-row">
+                        <a href="https://docs.google.com/document/d/1yFA14S0xG5r3CTl5P21GnoOG5iQsZ9Y8/view" class="btn btn-primary" target="_blank">View Full Document &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- SECTION 2: USER RESEARCH -->
+                <div class="pm-section description-block reveal">
+                    <span class="section-tag">&#127908; Section 2</span>
+                    <h2>User Research</h2>
+                    <p>Research combined <strong>10 user interviews</strong>, <strong>Reddit thread sentiment analysis</strong> (old and new threads), and <strong>public platform statistics</strong> to identify and validate the participation gap. Key insight: the barrier is not discovery or intent &mdash; it&rsquo;s conversion.</p>
+                    <div class="stats-row">
+                        <div class="stat-card">
+                            <div class="stat-num">44%</div>
+                            <div class="stat-label">Cognitive Overload / Complex Onboarding</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-num">24%</div>
+                            <div class="stat-label">Social Accessibility friction</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-num">20%</div>
+                            <div class="stat-label">Technical friction &amp; bugs</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-num">12%</div>
+                            <div class="stat-label">Miscellaneous (emojis, etc.)</div>
+                        </div>
+                    </div>
+                    <p style="margin-top:16px;"><strong>Top Insights from User Interviews &amp; Reddit:</strong></p>
+                    <ul>
+                        <li><strong>The Mute is the Silent Killer:</strong> &ldquo;I joined and saw 40 channels, so I muted it&rdquo; = effective churn. The fix is progressive disclosure, not better menus.</li>
+                        <li><strong>The Search for the Vibe:</strong> Users couldn&rsquo;t find where the active conversation was happening &mdash; a live activity signal is more useful than a static channel list.</li>
+                        <li><strong>The Onboarding Loop:</strong> Technical bugs in mobile onboarding (missing Continue button) are critical-path failures that kill the funnel before any social friction is even reached.</li>
+                        <li><strong>Social Risk is Real:</strong> &ldquo;I don&rsquo;t know how to get started because I don&rsquo;t know the social norms&rdquo; &mdash; users feel social ambiguity, not just UI confusion.</li>
+                    </ul>
+                    <div class="btn-row">
+                        <a href="https://docs.google.com/document/d/1yFA14S0xG5r3CTl5P21GnoOG5iQsZ9Y8/view" class="btn btn-primary" target="_blank">View Full Document &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- SECTION 3: PRD -->
+                <div class="pm-section description-block reveal">
+                    <span class="section-tag">&#128196; Section 3</span>
+                    <h2>Product Requirements Document (PRD)</h2>
+                    <p>The PRD defines two strategic pillars to close the join&rarr;participate conversion gap, both of which lower the cost of first participation and help new members engage with confidence.</p>
+
+                    <div class="pillars-grid">
+                        <div class="pillar-card">
+                            <h4>&#127919; Pillar 1 &mdash; Structured Onboarding</h4>
+                            <p>A guided, time-bound onboarding experience completable in &lt;5 minutes. Shows only 3&ndash;5 relevant channels, provides AI-generated icebreaker prompts, and includes a skip option at every step. Inspired by Midjourney&rsquo;s 21.5% lurker-to-creator conversion.</p>
+                        </div>
+                        <div class="pillar-card">
+                            <h4>&#128101; Pillar 2 &mdash; Newcomer Cohorts</h4>
+                            <p>Temporary newcomer-only welcome channels that reduce social risk anxiety. New users interact with other newcomers first, building confidence before entering high-traffic main channels. Gradually transitions participants to general channels.</p>
+                        </div>
+                    </div>
+
+                    <p style="margin-top:20px;"><strong>North Star Metric:</strong> Average user retention rate on large servers (100+ users)<br>
+                    <strong>Primary Goal:</strong> Reduce the 70% churn-in-24-hours rate by increasing the % of new users who post at least one message in their first session.</p>
+
+                    <p><strong>Hard Requirements:</strong></p>
+                    <ul>
+                        <li>Guided onboarding completable in under 5 minutes</li>
+                        <li>Users and moderators can opt out at any time</li>
+                        <li>Show only curated, essential info &mdash; no text walls</li>
+                        <li>Personalized channel recommendations based on user profile &amp; interests</li>
+                        <li>LLM-generated first-post prompts tuned per channel context</li>
+                    </ul>
+
+                    <p><strong>Guardrail Metrics:</strong> Spam/low-quality message rate &bull; Moderator workload &bull; Opt-out rate by server owners</p>
+                    <div class="btn-row">
+                        <a href="https://docs.google.com/document/d/1yFA14S0xG5r3CTl5P21GnoOG5iQsZ9Y8/view" class="btn btn-primary" target="_blank">View Full Document &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- SECTION 4: PROTOTYPE & ROADMAP -->
+                <div class="pm-section description-block reveal">
+                    <span class="section-tag">&#128508; Section 4</span>
+                    <h2>Prototype &amp; Roadmap</h2>
+                    <p>Four prototype concepts were evaluated using a weighted scoring matrix across 10 value propositions (Guided Entry, Reduced Overwhelm, First Post Scaffolding, Social Safety, etc.). The top 3 were selected for moderated user testing with 20 participants.</p>
+
+                    <p><strong>Top Prototype Concepts:</strong></p>
+                    <div class="pillars-grid">
+                        <div class="pillar-card">
+                            <h4>&#127381; J &mdash; Mission Board</h4>
+                            <p>Gamified micro-quest board for the first week. Optional, orderable tasks (react, introduce yourself, reply) with visible progress. Reduces &ldquo;trapped in a tutorial&rdquo; risk while scaffolding participation.</p>
+                        </div>
+                        <div class="pillar-card">
+                            <h4>&#128202; F &mdash; Interest-Powered Channels</h4>
+                            <p>Uses onboarding interest data to dynamically rank and show only 5 relevant channels instead of 50 alphabetical ones. Progressive disclosure powered by preference data.</p>
+                        </div>
+                        <div class="pillar-card">
+                            <h4>&#128172; T &mdash; Personalized Welcome</h4>
+                            <p>At end of onboarding, generates a personalized message telling the user exactly why this server is relevant &mdash; which channels match their interests, what conversation is happening now.</p>
+                        </div>
+                        <div class="pillar-card">
+                            <h4>&#129302; E &mdash; AI Training Wheels</h4>
+                            <p>AI buddy for first 48 hours with prompts, channel suggestions, and conversation starters. Graceful handoff to a real human buddy after 3 exchanges &mdash; so the transition feels earned.</p>
+                        </div>
+                    </div>
+
+                    <p style="margin-top:22px;"><strong>Launch Roadmap (4-Stage Phased Rollout):</strong></p>
+                    <table class="roadmap-table">
+                        <thead>
+                            <tr>
+                                <th>Phase</th>
+                                <th>Scope</th>
+                                <th>Exit Criteria</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Pilot</strong></td>
+                                <td>Internal Discord employees on company servers</td>
+                                <td>50%+ opt-in rate for guided channel tour</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Beta</strong></td>
+                                <td>5 top servers with guided tour option</td>
+                                <td>Increase in 7-day retention &amp; messages/week vs. pre-beta baseline</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Early Access</strong></td>
+                                <td>Invite-only &mdash; top 50 servers, moderator opt-in</td>
+                                <td>25%+ moderator adoption among invited servers</td>
+                            </tr>
+                            <tr>
+                                <td><strong>GA</strong></td>
+                                <td>All servers where moderators opt in</td>
+                                <td>Measure &amp; monitor retention and participation KPIs</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="btn-row">
+                        <a href="https://discord-prototype-1.vercel.app" class="btn btn-primary" target="_blank">&#127899; Live Prototype v1 &rarr;</a>
+                        <a href="https://discord-prototype-v3.vercel.app" class="btn btn-secondary" target="_blank">&#127899; Live Prototype v3 &rarr;</a>
+                        <a href="https://docs.google.com/document/d/1yFA14S0xG5r3CTl5P21GnoOG5iQsZ9Y8/view" class="btn btn-secondary" target="_blank">View Full Document &rarr;</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Dhivya Swaminathan. All rights reserved.</p>
+    </footer>
+</body>
+</html>
