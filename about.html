@@ -20,7 +20,7 @@
         .content-box {
             max-width: 900px;
             margin: 0 auto;
-            text-align: center;
+            text-align: left;
         }
 
         .education-table-wrapper {
@@ -55,6 +55,27 @@
             border-bottom: none;
         }
 
+        .philosophy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .philosophy-item {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 4px solid var(--primary);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .philosophy-item h4 {
+            margin-bottom: 1rem;
+            color: var(--dark);
+            font-weight: 700;
+        }
+
         footer {
             padding: 4rem 0;
             background: #fff;
@@ -76,12 +97,34 @@
     <main>
         <section class="clean-section reveal">
             <div class="content-box">
-                <div class="profile-picture-container">
-                    <img src="images/profile_new.jpg" alt="Dhivya Swaminathan" class="profile-picture">
+                <div class="profile-picture-container" style="text-align: center;">
+                    <img src="images/profile_new.jpg" alt="Dhivya Swaminathan" class="profile-picture" style="margin: 0 auto; border-radius: 50%; width: 200px; border: 4px solid var(--primary);">
                 </div>
                 <h2 class="section-title">My Story</h2>
-                <p>I am a software engineer and product strategist driven by a passion for crafting impactful digital solutions. My unique background combines deep technical expertise with strategic product management acumen, cultivated through an MBA and a Master's in Computer Science.</p>
-                <p>My professional journey is characterized by bridging the gap between technical feasibility and market viability, ensuring that every product I contribute to exceeds user expectations and business objectives.</p>
+                <p>I am a strategic WFM Leader and UC Berkeley Haas MBA candidate with over 15 years of experience driving large-scale digital transformations. My expertise lies in bridging the gap between complex employment compliance and scalable technical architecture for Global 500 organizations.</p>
+                <p>At <strong>Ross Dress for Less</strong>, I lead IT applications for Supply Chain WFM, directing the strategy for systems that power hundreds of locations. Previously, at <strong>UKG (Ultimate Kronos Group)</strong>, I spearheaded cloud migration journeys for over 350 enterprise customers, engineering automated platforms that fundamentally improved operational efficiency and labor transparency.</p>
+                <p>My professional journey is characterized by leading high-impact workforce initiatives, optimizing HCM operations, and steering end-to-end SDLC to reduce operational risk. I thrive on translating complex technical requirements into actionable product strategies that drive measurable business ROI.</p>
+            </div>
+        </section>
+
+        <section class="clean-section reveal" style="background-color: var(--bg-grey);">
+            <div class="content-box">
+                <h2 class="section-title">Strategic Philosophy</h2>
+                <p>As a technical lead with an MBA lens, I operate at the intersection of three core principles:</p>
+                <div class="philosophy-grid">
+                    <div class="philosophy-item">
+                        <h4>Technological Pragmatism</h4>
+                        <p>I believe in choosing tech stacks (Python, Go, SQL) based on their ability to solve specific business bottlenecks—whether that's Go for high-concurrency WFM syncs or YOLO for real-time sports analytics.</p>
+                    </div>
+                    <div class="philosophy-item">
+                        <h4>Human-Centric WFM</h4>
+                        <p>Workforce management systems should respect the humanity of the frontline worker. My goal is to build architectures that ensure fair labor tracking, compliance, and operational predictability.</p>
+                    </div>
+                    <div class="philosophy-item">
+                        <h4>The ROI of Quality</h4>
+                        <p>Technical debt is a business liability. By implementing rigorous quality engineering and CI/CD standards, I reduce long-term operational costs and improve first-pass quality by 20% or more.</p>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -99,13 +142,13 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Master of Business Administration</td>
-                                <td>University of California - Berkeley</td>
-                                <td>2021</td>
+                                <td>Master of Business Administration (MBA)</td>
+                                <td>University of California, Berkeley (Haas)</td>
+                                <td>Expected 2026</td>
                             </tr>
                             <tr>
-                                <td>Bachelor of Engineering in Bio-Informatics</td>
-                                <td>Vellore Institute of Technology</td>
+                                <td>Bachelor of Technology in Bio-Informatics</td>
+                                <td>Vellore Institute of Technology (VIT)</td>
                                 <td>2006</td>
                             </tr>
                         </tbody>
@@ -114,11 +157,11 @@
             </div>
         </section>
 
-        <section class="clean-section reveal">
+        <section class="clean-section reveal" style="background-color: var(--bg-grey);">
             <div class="content-box">
                 <h2 class="section-title">My Passion</h2>
-                <p>I am passionate about building products that make a tangible difference. I thrive on challenges that require creative problem-solving and pushing technical boundaries. From computer vision applications in sports to gamified sustainability solutions, I am always eager to apply cutting-edge technology to real-world problems.</p>
-                <p>I believe in continuous learning and adapting to new technologies to stay ahead in the fast-paced tech landscape. My goal is to lead teams that create innovative products that resonate with users and drive meaningful change.</p>
+                <p>I am passionate about building products that make a tangible difference in operational efficiency. I thrive on challenges that require creative problem-solving—from orchestrating complex cloud migrations to developing automated compliance platforms that protect both the business and its employees.</p>
+                <p>I believe in continuous learning as a competitive advantage. My goal is to lead high-performing teams that create innovative products which resonate with users, drive meaningful change, and set new standards in the enterprise software landscape.</p>
             </div>
         </section>
     </main>

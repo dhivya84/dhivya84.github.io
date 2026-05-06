@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Network Cafe — 01 AI Outreach</title>
+  <link href="case-shared.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,600,400,700" rel="stylesheet">
+</head>
+<body>
+
+<nav class="case-nav">
+  <a class="logo" href="projects.html">← Dhivya Swaminathan</a>
+  <ul>
+    <li><a href="network-overview.html">Overview</a></li>
+    <li><a href="network-s1-outreach.html" class="active">AI Outreach</a></li>
+    <li><a href="network-s2-analytics.html">Analytics</a></li>
+  </ul>
+</nav>
+
+<div class="case-hero" style="background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);">
+  <div>
+    <h1>01 — Contextual AI Outreach</h1>
+    <p>Engineering Authenticity through Prompt Engineering & News Synthesis</p>
+  </div>
+  <div class="hero-nav">
+    <a href="network-overview.html">Overview</a>
+    <a href="network-s2-analytics.html">02 Analytics →</a>
+  </div>
+</div>
+
+<main class="case-main">
+
+  <div class="case-card">
+    <span class="section-tag">The Challenge</span>
+    <h2>The "Generic" Trap</h2>
+    <p>Standard networking automation often feels robotic and insincere, leading to low response rates and damaged professional reputations. The challenge was to build a system that synthesizes three distinct data layers before drafting a single word:</p>
+    <ul>
+        <li><strong>Historical Context:</strong> Past interactions, shared projects, and last meeting notes.</li>
+        <li><strong>Live Triggers:</strong> Real-time news updates (e.g., company funding, product launches).</li>
+        <li><strong>Tone Mirroring:</strong> Adapting the outreach style to match the user's natural professional voice.</li>
+    </ul>
+  </div>
+
+  <div class="case-card">
+    <span class="section-tag">Implementation</span>
+    <h2>Prompt Engineering & GPT-4 Synthesis</h2>
+    <p>I engineered a multi-stage prompt pipeline that utilizes <strong>GPT-4</strong> as a reasoning engine rather than just a text generator.</p>
+    
+    <div class="two-col">
+      <div class="two-col-card">
+        <h4>Context Injection</h4>
+        <p>The system retrieves the last 3 emails/messages with a contact to determine the "strength" and "formality" of the relationship.</p>
+      </div>
+      <div class="two-col-card">
+        <h4>Trigger Extraction</h4>
+        <p>A Python-based scraping layer extracts the "key event" from a news snippet, ensuring the outreach focuses on a specific, relevant achievement.</p>
+      </div>
+    </div>
+
+    <div class="highlight-box">
+      <strong>Technical Breakthrough:</strong> By using few-shot prompting with examples of the user's *actual* successful outreach, the system achieved a <strong>90% authenticity score</strong> in blind user testing.
+    </div>
+  </div>
+
+  <div class="case-card">
+    <span class="section-tag">Technical Depth</span>
+    <h2>Handling Hallucinations</h2>
+    <p>To prevent the AI from "inventing" shared history, I implemented a strict RAG (Retrieval-Augmented Generation) constraint. The model is penalized if it generates specific details not present in the provided JSON context of past interactions.</p>
+  </div>
+
+  <div class="btn-row">
+    <a href="network-s2-analytics.html" class="btn btn-primary" style="background: #6c5ce7; border-color: #6c5ce7;">Next: Relationship Analytics →</a>
+  </div>
+
+</main>
+
+<footer class="case-footer">
+  <p>Dhivya Swaminathan &mdash; <a href="network-overview.html">Overview</a></p>
+</footer>
+
+</body>
+</html>

@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me</title>
-
-	<link href="style.css" rel="stylesheet">
+    <title>Contact - Dhivya Swaminathan</title>
+    <link href="style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,600,400,700" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body> 
     <nav class="navbar">
@@ -17,32 +18,50 @@
           <li><a href="contact.html" class="active">Contact</a></li>
         </ul>
       </nav>
+
     <main>
-<!-- Contact button section begins -->
-<section class="content contact">
-    <div id='form'>
-      <h1>Get in Touch</h1>
-      <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
-      <form> 
-        <input type="text" placeholder="Your Name"> 
-        <input type="email" placeholder="Your Email">
-        <textArea placeholder="Your Message"></textArea>
-        <div id='buttonDiv'>
-          <button>Send</button>
-        </div>
-      </form>
-    </div>
-    <div class="wrapper">
-      <ul>
-        <li>
-          <a href="https://www.linkedin.com/in/dhivya-swaminathan" target="_blank">LinkedIn</a>
-				</li>
-				<li>
-						<a href="https://github.com/dhivya84" target="_blank">GitHub</a>
-					</li>
-      </ul>
-    </div>
-    </section>
+        <section class="contact-container reveal">
+            <div class="contact-box-grid">
+                <div class="contact-info">
+                    <h1>Let's Connect</h1>
+                    <p>Whether you are looking for technical architecture for a complex WFM system, strategic product leadership, or a deep dive into AI-driven analytics, let’s start the conversation. I am always open to discussing high-impact projects at the intersection of tech and business strategy.</p>
+                    
+                    <div class="contact-links">
+                        <a href="https://www.linkedin.com/in/dhivyaroobini-swaminathan/" target="_blank" class="contact-link-item">
+                            <span><i class="fab fa-linkedin-in"></i></span>
+                            LinkedIn Profile
+                        </a>
+                        <a href="https://github.com/dhivya84" target="_blank" class="contact-link-item">
+                            <span><i class="fab fa-github"></i></span>
+                            GitHub Repository
+                        </a>
+                        <div class="contact-link-item">
+                            <span><i class="fas fa-envelope"></i></span>
+                            dhivya_swaminathan@berkeley.edu
+                        </div>
+                        <div class="contact-link-item">
+                            <span><i class="fas fa-location-dot"></i></span>
+                            San Francisco Bay Area
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrapper">
+                    <form class="contact-form">
+                        <input type="text" placeholder="Full Name" required>
+                        <input type="email" placeholder="Email Address" required>
+                        <input type="text" placeholder="Subject">
+                        <textarea placeholder="Tell me about your project or vision..." required></textarea>
+                        <button type="submit" class="btn">Send Message <i class="fas fa-paper-plane" style="margin-left: 8px;"></i></button>
+                    </form>
+                </div>
+            </div>
+        </section>
     </main>
-    </body>
+
+    <footer>
+        <p>&copy; 2024 Dhivya Swaminathan. All rights reserved.</p>
+    </footer>
+
+</body>
 </html>

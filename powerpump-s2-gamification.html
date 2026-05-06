@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PowerPump — 02 Gamification</title>
+  <link href="case-shared.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,600,400,700" rel="stylesheet">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+<nav class="case-nav">
+  <a class="logo" href="projects.html">← Dhivya Swaminathan</a>
+  <ul>
+    <li><a href="powerpump-overview.html">Overview</a></li>
+    <li><a href="powerpump-s1-auth.html">Auth & Privacy</a></li>
+    <li><a href="powerpump-s2-gamification.html" class="active">Gamification</a></li>
+  </ul>
+</nav>
+
+<div class="case-hero" style="background: linear-gradient(135deg, #00b894 0%, #55efc4 100%);">
+  <div>
+    <h1>02 — MET Gamification</h1>
+    <p>Using Metabolic Science to Incentivize Physical Activity during EV Charging</p>
+  </div>
+  <div class="hero-nav">
+    <a href="powerpump-s1-auth.html">← 01 Auth & Privacy</a>
+    <a href="powerpump-overview.html">Overview</a>
+  </div>
+</div>
+
+<main class="case-main">
+
+  <div class="case-card">
+    <span class="section-tag">The Challenge</span>
+    <h2>The "Equity in Effort" Problem</h2>
+    <p>A "one point per minute" reward system is unfair—it treats a light walk the same as high-intensity interval training (HIIT). To keep users engaged, the reward system had to be scientifically grounded in actual physical effort.</p>
+  </div>
+
+  <div class="case-card">
+    <span class="section-tag">Implementation</span>
+    <h2>The MET Algorithm</h2>
+    <p>I implemented the <strong>Metabolic Equivalent of Task (MET)</strong> formula to calculate reward "PowerPoints" $P$. This ensures that rewards are proportional to the physiological energy expended during the charging session.</p>
+    
+    <div class="math-box">
+        \[ P = \sum_{i=1}^{n} (MET_i \times weight \times duration_i \times \alpha) \]
+    </div>
+    
+    <p>Where $\alpha$ is a scaling constant and $n$ represents the total activity sessions recorded during the 30-60 minute charge window. This algorithm allows a user who jogs for 10 minutes to earn significantly more than one who stands for 30 minutes, encouraging higher intensity participation.</p>
+  </div>
+
+  <div class="case-card">
+    <span class="section-tag">Infrastructure</span>
+    <h2>Serverless Scalability</h2>
+    <p>The calculation engine is built on <strong>Next.js API routes (Serverless)</strong>. This architecture was chosen for three reasons:</p>
+    <ul>
+        <li><strong>Cold Start Efficiency:</strong> Charging hubs have "bursty" traffic patterns (e.g., commute hours). Serverless handles these spikes without requiring fixed server overhead.</li>
+        <li><strong>Event-Driven:</strong> Calculations are only triggered when a charging session ends, minimizing idle computing costs.</li>
+        <li><strong>Latency:</strong> Data synchronization from the wearable occurs in <strong>under 2 seconds</strong>, providing the user with immediate dopamine feedback via the dashboard.</li>
+    </ul>
+    
+    <div class="stats-row">
+      <div class="stat-card"><div class="stat-num">70%</div><div class="stat-label">Retention rate</div></div>
+      <div class="stat-card"><div class="stat-num">100+</div><div class="stat-label">Concurrent sessions handled</div></div>
+    </div>
+  </div>
+
+  <div class="btn-row">
+    <a href="https://github.com/dhivya84/powerpump" class="btn btn-primary" style="background: #00b894; border-color: #00b894;" target="_blank">View Code on GitHub</a>
+    <a href="projects.html" class="btn btn-secondary" style="color: #00b894; border-color: #00b894;">Explore Other Projects</a>
+  </div>
+
+</main>
+
+<footer class="case-footer">
+  <p>Dhivya Swaminathan &mdash; <a href="projects.html">Back to Projects</a></p>
+</footer>
+
+</body>
+</html>

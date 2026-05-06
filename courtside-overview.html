@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Court-Side AI — Overview</title>
+  <link href="case-shared.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,600,400,700" rel="stylesheet">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+<nav class="case-nav">
+  <a class="logo" href="projects.html">← Dhivya Swaminathan</a>
+  <ul>
+    <li><a href="courtside-overview.html" class="active">Overview</a></li>
+    <li><a href="courtside-s1-problem.html">Detection</a></li>
+    <li><a href="courtside-s2-tracking.html">Tracking</a></li>
+    <li><a href="courtside-s3-analytics.html">Analytics</a></li>
+  </ul>
+</nav>
+
+<div class="case-hero">
+  <div>
+    <h1>Court-Side AI</h1>
+    <p>Computer Vision for Volleyball Analytics & Highlights</p>
+  </div>
+  <div class="hero-nav">
+    <a href="courtside-s1-problem.html">01 Detection</a>
+    <a href="courtside-s2-tracking.html">02 Tracking</a>
+    <a href="courtside-s3-analytics.html">03 Analytics</a>
+  </div>
+</div>
+
+<main class="case-main">
+
+  <div class="case-card">
+    <span class="section-tag">Project Overview</span>
+    <h2>The Future of Amateur Sports Analytics</h2>
+    <p>Volleyball is a high-speed sport characterized by rapid player rotations, frequent occlusions, and a small, fast-moving ball. While professional leagues use expensive multi-camera systems, amateur and collegiate teams lack accessible analytics. Court-Side AI bridges this gap using specialized Computer Vision to automate highlight extraction and performance tracking from a single HD camera source.</p>
+    
+    <div class="video-wrapper">
+        <video autoplay loop muted playsinline controls>
+            <source src="Assets/videos/courtside_demo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <div class="stats-row">
+      <div class="stat-card"><div class="stat-num">95%</div><div class="stat-label">Reduction in editing time</div></div>
+      <div class="stat-card"><div class="stat-num">0.92</div><div class="stat-label">Detection mAP</div></div>
+      <div class="stat-card"><div class="stat-num">1000+</div><div class="stat-label">Events processed / sec</div></div>
+      <div class="stat-card"><div class="stat-num">98%</div><div class="stat-label">Contact accuracy</div></div>
+    </div>
+  </div>
+
+  <div class="case-card">
+    <span class="section-tag">Strategic Rationale</span>
+    <h2>Technical Decision Making</h2>
+    <p>Choosing the right tech stack was critical to balance the high-concurrency needs of real-time sports tracking with the accuracy required for professional-grade analytics.</p>
+    <table class="tech-table">
+      <thead>
+        <tr>
+          <th>Component</th>
+          <th>Technology</th>
+          <th>Strategic Rationale</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Vision Model</strong></td>
+          <td>YOLOv8</td>
+          <td>Industry-leading inference speed (60fps) required for tracking sub-second ball movements.</td>
+        </tr>
+        <tr>
+          <td><strong>Logic</strong></td>
+          <td>ByteTrack + Re-ID</td>
+          <td>Maintains identity persistence through high-occlusion net plays where traditional trackers fail.</td>
+        </tr>
+        <tr>
+          <td><strong>Geometry</strong></td>
+          <td>OpenCV Homography</td>
+          <td>Mathematically maps 2D pixel space to a 3D court model for precise velocity metrics.</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="btn-row">
+      <a href="courtside-s1-problem.html" class="btn btn-primary">Start Technical Deep-Dive →</a>
+      <a href="https://github.com/dhivya84/Court-Side-AI" class="btn btn-secondary" target="_blank">View Code on GitHub</a>
+    </div>
+  </div>
+
+  <div class="case-card">
+    <span class="section-tag">Phases</span>
+    <h2>What's Inside</h2>
+    <div class="two-col">
+      <div class="two-col-card">
+        <h4>01 → Real-time Detection</h4>
+        <p>Optimizing YOLOv8 for volleyball-specific objects and handling high-speed motion blur.</p>
+      </div>
+      <div class="two-col-card">
+        <h4>02 → Tracking & Persistence</h4>
+        <p>How we solve the "occlusion problem" at the net using ByteTrack and custom Re-ID features.</p>
+      </div>
+      <div class="two-col-card">
+        <h4>03 → Geometric Analytics</h4>
+        <p>Using Planar Homography to calculate ball velocity, player coverage, and jump height.</p>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer class="case-footer">
+  <p>Dhivya Swaminathan &mdash; <a href="projects.html">Back to Projects</a></p>
+</footer>
+
+</body>
+</html>

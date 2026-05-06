@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PowerPump — Overview</title>
+  <link href="case-shared.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,600,400,700" rel="stylesheet">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+<nav class="case-nav">
+  <a class="logo" href="projects.html">← Dhivya Swaminathan</a>
+  <ul>
+    <li><a href="powerpump-overview.html" class="active">Overview</a></li>
+    <li><a href="powerpump-s1-auth.html">Auth & Privacy</a></li>
+    <li><a href="powerpump-s2-gamification.html">Gamification</a></li>
+  </ul>
+</nav>
+
+<div class="case-hero" style="background: linear-gradient(135deg, #00b894 0%, #55efc4 100%);">
+  <div>
+    <h1>PowerPump</h1>
+    <p>Gamified EV Charging & Fitness Ecosystem</p>
+  </div>
+  <div class="hero-nav">
+    <a href="powerpump-s1-auth.html">01 Auth & Privacy</a>
+    <a href="powerpump-s2-gamification.html">02 Gamification</a>
+  </div>
+</div>
+
+<main class="case-main">
+
+  <div class="case-card">
+    <span class="section-tag">Project Overview</span>
+    <h2>Turning Sedentary Downtime into Social Health Capital</h2>
+    <p>Electric Vehicle (EV) charging can take 30-60 minutes, often leading to sedentary downtime for drivers. PowerPump is a hardware-software bridge that incentivizes physical activity during this window. By synchronizing real-time data from fitness wearables with EV charging session data, users earn rewards and "PowerPoints" for every calorie burned while their vehicle charges.</p>
+    
+    <div class="video-wrapper" style="background: #f0f2f5; display: flex; align-items: center; justify-content: center;">
+        <img src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=1200&q=80" alt="PowerPump Dashboard" style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+
+    <div class="stats-row">
+      <div class="stat-card"><div class="stat-num">2.5k</div><div class="stat-label">Extra steps per session</div></div>
+      <div class="stat-card"><div class="stat-num">70%</div><div class="stat-label">User retention rate</div></div>
+      <div class="stat-card"><div class="stat-num">&lt;2s</div><div class="stat-label">Sync latency</div></div>
+      <div class="stat-card"><div class="stat-num">100%</div><div class="stat-label">OAuth 2.0 Compliance</div></div>
+    </div>
+  </div>
+
+  <div class="case-card">
+    <span class="section-tag">Strategic Rationale</span>
+    <h2>Technical Architecture Decisions</h2>
+    <p>Building a trust-based health ecosystem required a focus on secure data pipelines and a scientific approach to activity rewards.</p>
+    <table class="tech-table">
+      <thead>
+        <tr>
+          <th>Component</th>
+          <th>Technology</th>
+          <th>Strategic Rationale</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Identity</strong></td>
+          <td>OAuth 2.0 / Fitbit</td>
+          <td>Industry-standard secure access to health metrics without storing sensitive PII on-server.</td>
+        </tr>
+        <tr>
+          <td><strong>Architecture</strong></td>
+          <td>Next.js (Serverless)</td>
+          <td>Event-driven scaling to handle burst traffic at high-occupancy charging stations.</td>
+        </tr>
+        <tr>
+          <td><strong>Gamification</strong></td>
+          <td>MET-based Logic</td>
+          <td>Standardized metabolic scaling to ensure fairness across all physical activity types.</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="btn-row">
+      <a href="powerpump-s1-auth.html" class="btn btn-primary" style="background: #00b894; border-color: #00b894;">Explore Auth & Privacy →</a>
+      <a href="https://github.com/dhivya84/powerpump" class="btn btn-secondary" style="color: #00b894; border-color: #00b894;" target="_blank">View Code on GitHub</a>
+    </div>
+  </div>
+
+</main>
+
+<footer class="case-footer">
+  <p>Dhivya Swaminathan &mdash; <a href="projects.html">Back to Projects</a></p>
+</footer>
+
+</body>
+</html>

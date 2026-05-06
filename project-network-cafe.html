@@ -42,19 +42,58 @@
                 </div>
 
                 <div class="description-block reveal">
-                    <h2>Core Features</h2>
+                    <h2>Strategic Rationale</h2>
+                    <table class="tech-stack-table">
+                        <thead>
+                            <tr>
+                                <th>Component</th>
+                                <th>Technology</th>
+                                <th>Rationale</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>AI Engine</strong></td>
+                                <td>GPT-4 / OpenAI API</td>
+                                <td>Superior natural language synthesis for authentic, context-aware outreach.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Data Pipeline</strong></td>
+                                <td>Python / BeautifulSoup</td>
+                                <td>Flexible scraping of professional news and public contact updates.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Visualization</strong></td>
+                                <td>D3.js / Canvas</td>
+                                <td>Mapping social capital through interactive relationship density graphs.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Logic</strong></td>
+                                <td>Decay-based Scoring</td>
+                                <td>Mathematical modeling of relationship strength over time.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="description-block reveal">
+                    <h2>Core Features & Technical Depth</h2>
                     <div class="tech-grid">
                         <div class="tech-card">
                             <h3>Contextual AI Outreach</h3>
-                            <p>Engineered specialized prompt templates using <strong>GPT-4</strong> to synthesize user history with live news, generating messages with a 40% higher response rate than standard templates.</p>
+                            <p>Engineered specialized prompt templates using <strong>GPT-4</strong> to synthesize user history with live news. By injecting specific "reconnection triggers" into the context window, the system generates messages with a 40% higher response rate than standard templates.</p>
                         </div>
                         <div class="tech-card">
-                            <h3>Graph-based Networking</h3>
-                            <p>Implemented a relationship visualization layer that maps network density and interaction frequency, identifying "weak ties" that are statistically more likely to provide new opportunities.</p>
+                            <h3>Relationship Strength Modeling</h3>
+                            <p>I implemented a decay-based scoring algorithm to identify "weak ties" that are statistically more likely to provide new opportunities. The score $S$ is modeled as a function of interaction frequency $f$, recency $t$, and sentiment $s$:</p>
+                            <p style="background: #f8f9fa; padding: 1rem; border-radius: 8px; font-family: 'Courier New', Courier, monospace;">
+                                \[ S = \sum (f \times e^{-\lambda t} \times s) \]
+                            </p>
+                            <p>Where $\lambda$ is the decay constant for professional relevance, helping users prioritize high-impact re-engagement.</p>
                         </div>
                         <div class="tech-card">
                             <h3>Real-time News Triggers</h3>
-                            <p>Developed an automated news-scraping pipeline that monitors contact-specific updates, providing timely notifications for promotions, job changes, or company news.</p>
+                            <p>Developed an automated news-scraping pipeline that monitors contact-specific updates. The system identifies key events (promotions, job changes, funding rounds) and alerts the user with a pre-drafted, context-rich message.</p>
                         </div>
                     </div>
                 </div>

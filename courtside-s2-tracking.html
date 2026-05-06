@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Court-Side AI — 02 Tracking</title>
+  <link href="case-shared.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,600,400,700" rel="stylesheet">
+</head>
+<body>
+
+<nav class="case-nav">
+  <a class="logo" href="projects.html">← Dhivya Swaminathan</a>
+  <ul>
+    <li><a href="courtside-overview.html">Overview</a></li>
+    <li><a href="courtside-s1-problem.html">Detection</a></li>
+    <li><a href="courtside-s2-tracking.html" class="active">Tracking</a></li>
+    <li><a href="courtside-s3-analytics.html">Analytics</a></li>
+  </ul>
+</nav>
+
+<div class="case-hero">
+  <div>
+    <h1>02 — Identity Persistence</h1>
+    <p>Solving the Occlusion Problem in High-Density Sports Environments</p>
+  </div>
+  <div class="hero-nav">
+    <a href="courtside-s1-problem.html">← 01 Detection</a>
+    <a href="courtside-s3-analytics.html">03 Analytics →</a>
+  </div>
+</div>
+
+<main class="case-main">
+
+  <div class="case-card">
+    <span class="section-tag">The Challenge</span>
+    <h2>The Net Occlusion Problem</h2>
+    <p>In volleyball, the most critical actions happen at the net. During a block or spike, multiple players (12+) and the ball converge in a very small area. Traditional trackers often "swap" IDs or lose track entirely when players cross behind one another or the net mesh.</p>
+  </div>
+
+  <div class="case-card">
+    <span class="section-tag">Implementation</span>
+    <h2>ByteTrack + Custom Re-ID</h2>
+    <p>I implemented a multi-stage tracking pipeline that combines motion prediction with visual feature extraction.</p>
+    
+    <div class="two-col">
+      <div class="two-col-card">
+        <h4>Motion Prediction (Kalman Filter)</h4>
+        <p>Utilizes <strong>ByteTrack</strong> to predict player trajectories based on previous velocity and acceleration vectors, maintaining track IDs even during partial occlusions.</p>
+      </div>
+      <div class="two-col-card">
+        <h4>Visual Re-ID Layer</h4>
+        <p>A secondary feature extraction layer stores "visual embeddings" (uniform colors, player height, limb proportions) to re-associate a lost ID once the player reappears from behind an occlusion.</p>
+      </div>
+    </div>
+
+    <div class="highlight-box">
+      <strong>Strategic Rationale:</strong> By using a tracking-by-detection paradigm, we ensure that even if the visual appearance changes (e.g., player dives for a ball), the motion vector remains a stable primary key for ID persistence.
+    </div>
+  </div>
+
+  <div class="case-card">
+    <span class="section-tag">Technical Depth</span>
+    <h2>Handling Ball-Player Association</h2>
+    <p>The system doesn't just track objects independently; it maps the "ownership" of the ball. I developed a spatial-proximity algorithm that calculates the Euclidean distance between the ball and player centroids across 5-frame windows to accurately detect "contacts" with 98% accuracy.</p>
+  </div>
+
+  <div class="btn-row">
+    <a href="courtside-s3-analytics.html" class="btn btn-primary">Next: Geometric Analytics →</a>
+  </div>
+
+</main>
+
+<footer class="case-footer">
+  <p>Dhivya Swaminathan &mdash; <a href="courtside-overview.html">Overview</a></p>
+</footer>
+
+</body>
+</html>

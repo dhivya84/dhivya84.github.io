@@ -42,19 +42,58 @@
                 </div>
 
                 <div class="description-block reveal">
+                    <h2>Strategic Rationale</h2>
+                    <table class="tech-stack-table">
+                        <thead>
+                            <tr>
+                                <th>Component</th>
+                                <th>Technology</th>
+                                <th>Rationale</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Auth/Identity</strong></td>
+                                <td>OAuth 2.0 / Fitbit API</td>
+                                <td>Secure, industry-standard access to granular health metrics (MET, Heart Rate).</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Backend Architecture</strong></td>
+                                <td>Next.js (Serverless)</td>
+                                <td>Highly scalable, event-driven architecture to handle spikes in charging sessions.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Data Processing</strong></td>
+                                <td>Node.js</td>
+                                <td>Asynchronous processing of wearable data pings with low latency.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Logic</strong></td>
+                                <td>MET Gamification</td>
+                                <td>Scientific approach to rewarding effort across diverse physical activities.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="description-block reveal">
                     <h2>Technical Highlights</h2>
                     <div class="tech-grid">
                         <div class="tech-card">
                             <h3>OAuth 2.0 Pipeline</h3>
-                            <p>Architected a secure <strong>Fitbit API</strong> integration using OAuth 2.0, handling token refresh cycles and encrypted data transmission for user privacy.</p>
+                            <p>Architected a secure <strong>Fitbit API</strong> integration using OAuth 2.0, handling token refresh cycles and encrypted data transmission for user privacy. This ensures that sensitive health data is never stored locally on the server.</p>
                         </div>
                         <div class="tech-card">
-                            <h3>Gamification Engine</h3>
-                            <p>Developed a custom algorithm to calculate "PowerPoints" based on MET (Metabolic Equivalent of Task) values, ensuring fair reward distribution across different activity types.</p>
+                            <h3>MET-based Gamification Engine</h3>
+                            <p>The "PowerPoints" $P$ are calculated using the Metabolic Equivalent of Task (MET) formula, ensuring that a 30-minute walk and a 30-minute jog are rewarded proportionally to their physiological impact:</p>
+                            <p style="background: #f8f9fa; padding: 1rem; border-radius: 8px; font-family: 'Courier New', Courier, monospace;">
+                                \[ P = \sum_{i=1}^{n} (MET_i \times weight \times duration_i \times \alpha) \]
+                            </p>
+                            <p>Where $\alpha$ is a scaling factor and $n$ represents activity sessions during the charge window.</p>
                         </div>
                         <div class="tech-card">
-                            <h3>Serverless Architecture</h3>
-                            <p>Utilized <strong>Next.js API routes</strong> to build a lightweight, scalable backend capable of handling high-frequency data pings from multiple wearable devices.</p>
+                            <h3>Serverless Scalability</h3>
+                            <p>Utilized <strong>Next.js API routes</strong> to build a lightweight, scalable backend. The serverless approach reduces idle costs while automatically scaling to handle 100+ concurrent user syncs at busy charging hubs.</p>
                         </div>
                     </div>
                 </div>

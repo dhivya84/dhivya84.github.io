@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Network Cafe — 02 Analytics</title>
+  <link href="case-shared.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,600,400,700" rel="stylesheet">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+<nav class="case-nav">
+  <a class="logo" href="projects.html">← Dhivya Swaminathan</a>
+  <ul>
+    <li><a href="network-overview.html">Overview</a></li>
+    <li><a href="network-s1-outreach.html">AI Outreach</a></li>
+    <li><a href="network-s2-analytics.html" class="active">Analytics</a></li>
+  </ul>
+</nav>
+
+<div class="case-hero" style="background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);">
+  <div>
+    <h1>02 — Relationship Analytics</h1>
+    <p>Using Decay-Based Scoring & Graph Theory to Prioritize Networking</p>
+  </div>
+  <div class="hero-nav">
+    <a href="network-s1-outreach.html">← 01 AI Outreach</a>
+    <a href="network-overview.html">Overview</a>
+  </div>
+</div>
+
+<main class="case-main">
+
+  <div class="case-card">
+    <span class="section-tag">The Challenge</span>
+    <h2>The "Dunbar's Number" Problem</h2>
+    <p>It is cognitively impossible to maintain active relationships with more than ~150 people simultaneously. Most networking tools fail because they don't help the user *prioritize*. The goal was to mathematically identify which "weak ties" are in danger of fading and which have the highest latent social capital.</p>
+  </div>
+
+  <div class="case-card">
+    <span class="section-tag">Implementation</span>
+    <h2>Decay-Based Scoring Model</h2>
+    <p>I implemented a relationship strength algorithm that accounts for the natural "fade" of professional connections over time. The score $S$ is modeled as a function of interaction frequency $f$, recency $t$, and the perceived "formality" or depth of interaction $w$.</p>
+    
+    <div class="math-box">
+        \[ S = \sum_{i=1}^{n} (w_i \times e^{-\lambda t_i}) \]
+    </div>
+    
+    <p>Where $\lambda$ represents the decay constant (higher for transactional relationships, lower for mentors) and $t_i$ is the time elapsed since interaction $i$. This ensures the dashboard highlights contacts just as they are about to "churn" from the user's active circle.</p>
+  </div>
+
+  <div class="case-card">
+    <span class="section-tag">Visualization</span>
+    <h2>Graph-Based Network Mapping</h2>
+    <p>Using <strong>D3.js</strong>, I built an interactive social graph that clusters contacts by industry and interaction density. This allows users to visually identify "structural holes" in their network—areas where they lack diverse connections—providing a strategic roadmap for future outreach.</p>
+    
+    <div class="stats-row">
+      <div class="stat-card"><div class="stat-num">3x</div><div class="stat-label">Higher interaction density</div></div>
+      <div class="stat-card"><div class="stat-num">90%</div><div class="stat-label">Accuracy in predicting "warm" leads</div></div>
+    </div>
+  </div>
+
+  <div class="btn-row">
+    <a href="https://github.com/dhivya84/network-cafe" class="btn btn-primary" style="background: #6c5ce7; border-color: #6c5ce7;" target="_blank">View Code on GitHub</a>
+    <a href="projects.html" class="btn btn-secondary" style="color: #6c5ce7; border-color: #6c5ce7;">Explore Other Projects</a>
+  </div>
+
+</main>
+
+<footer class="case-footer">
+  <p>Dhivya Swaminathan &mdash; <a href="network-overview.html">Overview</a></p>
+</footer>
+
+</body>
+</html>

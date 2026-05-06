@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Court-Side AI — 01 Detection</title>
+  <link href="case-shared.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,600,400,700" rel="stylesheet">
+</head>
+<body>
+
+<nav class="case-nav">
+  <a class="logo" href="projects.html">← Dhivya Swaminathan</a>
+  <ul>
+    <li><a href="courtside-overview.html">Overview</a></li>
+    <li><a href="courtside-s1-problem.html" class="active">Detection</a></li>
+    <li><a href="courtside-s2-tracking.html">Tracking</a></li>
+    <li><a href="courtside-s3-analytics.html">Analytics</a></li>
+  </ul>
+</nav>
+
+<div class="case-hero">
+  <div>
+    <h1>01 — Real-time Detection</h1>
+    <p>Optimizing Vision Models for High-Speed Sports Environments</p>
+  </div>
+  <div class="hero-nav">
+    <a href="courtside-overview.html">Overview</a>
+    <a href="courtside-s2-tracking.html">02 Tracking →</a>
+  </div>
+</div>
+
+<main class="case-main">
+
+  <div class="case-card">
+    <span class="section-tag">The Challenge</span>
+    <h2>Detecting the "Impossible"</h2>
+    <p>In volleyball, traditional object detection models fail for three primary reasons:</p>
+    <ul>
+        <li><strong>Small Object Scale:</strong> The ball often occupies less than 1% of the total pixel area.</li>
+        <li><strong>Motion Blur:</strong> At speeds exceeding 100km/h, the ball appears as a streak rather than a sphere.</li>
+        <li><strong>Feature Overlap:</strong> Player uniforms, net patterns, and court lines create significant visual noise.</li>
+    </ul>
+  </div>
+
+  <div class="case-card">
+    <span class="section-tag">Implementation</span>
+    <h2>YOLOv8 Optimization</h2>
+    <p>To achieve 60fps inference while maintaining high precision, I utilized <strong>YOLOv8</strong> with custom training weights focused on sports equipment and human skeletal keypoints.</p>
+    <h3>Key Optimizations:</h3>
+    <div class="two-col">
+      <div class="two-col-card">
+        <h4>Augmentation Pipeline</h4>
+        <p>Implemented synthetic motion blur and varying lighting conditions into the training set to improve robust detection in different gym environments.</p>
+      </div>
+      <div class="two-col-card">
+        <h4>Tiling Inference</h4>
+        <p>Used overlapping tiling for high-resolution input, ensuring small objects (the ball) are not "downsampled away" during the feature extraction phase.</p>
+      </div>
+    </div>
+    <div class="highlight-box">
+      <strong>Result:</strong> Achieved a <strong>mean Average Precision (mAP) of 0.92</strong>, representing a 15% improvement over the baseline pre-trained weights for the ball class.
+    </div>
+  </div>
+
+  <div class="case-card">
+    <span class="section-tag">Technical Depth</span>
+    <h2>Handling the "Ghosting" Effect</h2>
+    <p>When the ball travels at maximum velocity, traditional detection often "misses" frames. I implemented a temporal consistency layer that uses the previous 3 frames to predict the probable detection window in the current frame, significantly reducing "ghosting" or dropped detections.</p>
+  </div>
+
+  <div class="btn-row">
+    <a href="courtside-s2-tracking.html" class="btn btn-primary">Next: Tracking & Persistence →</a>
+  </div>
+
+</main>
+
+<footer class="case-footer">
+  <p>Dhivya Swaminathan &mdash; <a href="courtside-overview.html">Overview</a></p>
+</footer>
+
+</body>
+</html>

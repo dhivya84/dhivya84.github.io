@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Court-Side AI — 03 Analytics</title>
+  <link href="case-shared.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,600,400,700" rel="stylesheet">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+<nav class="case-nav">
+  <a class="logo" href="projects.html">← Dhivya Swaminathan</a>
+  <ul>
+    <li><a href="courtside-overview.html">Overview</a></li>
+    <li><a href="courtside-s1-problem.html">Detection</a></li>
+    <li><a href="courtside-s2-tracking.html">Tracking</a></li>
+    <li><a href="courtside-s3-analytics.html" class="active">Analytics</a></li>
+  </ul>
+</nav>
+
+<div class="case-hero">
+  <div>
+    <h1>03 — Geometric Analytics</h1>
+    <p>Mapping 2D Pixels to 3D Actionable Sports Insights</p>
+  </div>
+  <div class="hero-nav">
+    <a href="courtside-s2-tracking.html">← 02 Tracking</a>
+    <a href="courtside-overview.html">Overview</a>
+  </div>
+</div>
+
+<main class="case-main">
+
+  <div class="case-card">
+    <span class="section-tag">The Challenge</span>
+    <h2>Translating Pixels to Performance</h2>
+    <p>A camera captures images in a 2D coordinate system. However, sports analytics require real-world metrics like velocity (m/s), distance traveled, and vertical jump height. Without a 3D coordinate system, these metrics remain distorted by camera perspective.</p>
+  </div>
+
+  <div class="case-card">
+    <span class="section-tag">Implementation</span>
+    <h2>Planar Homography Transformation</h2>
+    <p>To solve this, I implemented a planar homography transformation using <strong>OpenCV</strong>. This maps the 4 corners of the volleyball court from the video frame to a 1:1 scale model of a standard 18m x 9m court.</p>
+    
+    <div class="math-box">
+        \[ \begin{bmatrix} X_{world} \\ Y_{world} \\ 1 \end{bmatrix} = H \begin{bmatrix} x_{pixel} \\ y_{pixel} \\ 1 \end{bmatrix} \]
+    </div>
+    
+    <p>Where \( H \) is the $3 \times 3$ matrix estimated during the initial calibration phase. This allows the system to calculate the ball's actual velocity regardless of how far it is from the camera lens.</p>
+  </div>
+
+  <div class="case-card">
+    <span class="section-tag">Business Impact</span>
+    <h2>Automated Highlights & ROI</h2>
+    <p>By combining high-accuracy tracking with geometric mapping, the system can autonomously identify "high-intensity events" (e.g., spikes exceeding 80km/h or rallies lasting longer than 15 seconds) and extract them as highlights.</p>
+    
+    <div class="stats-row">
+      <div class="stat-card"><div class="stat-num">95%</div><div class="stat-label">Automation of editing tasks</div></div>
+      <div class="stat-card"><div class="stat-num">±5cm</div><div class="stat-label">Positioning accuracy</div></div>
+      <div class="stat-card"><div class="stat-num">Instant</div><div class="stat-label">Feedback for coaching staff</div></div>
+    </div>
+
+    <div class="highlight-box">
+        <strong>Strategic Value:</strong> This transformation moves the product from a "video viewer" to a "data engine," providing coaches with heatmaps and speed profiles that were previously only available at the Olympic level.
+    </div>
+  </div>
+
+  <div class="btn-row">
+    <a href="https://github.com/dhivya84/Court-Side-AI" class="btn btn-primary" target="_blank">View Code on GitHub</a>
+    <a href="projects.html" class="btn btn-secondary">Explore Other Projects</a>
+  </div>
+
+</main>
+
+<footer class="case-footer">
+  <p>Dhivya Swaminathan &mdash; <a href="courtside-overview.html">Overview</a></p>
+</footer>
+
+</body>
+</html>
